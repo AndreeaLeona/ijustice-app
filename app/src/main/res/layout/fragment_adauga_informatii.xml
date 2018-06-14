@@ -9,11 +9,25 @@
     tools:context=".AdaugaInformatiiFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/adaugainf_btn_adauga"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:id="@+id/adaugainf_tv_mesaj"
-        android:text="Adauga informatii despre tine"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
+        android:text="Adauga"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/adaugainf_btn_editeaza"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="140dp"
+        android:background="@color/colorPrimary"
+        android:text="Editeaza" />
 
 
  

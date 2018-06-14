@@ -21,7 +21,9 @@
         <activity android:name=".LogInAvocatActivity" />
         <activity android:name=".SignUpAvocatActivity" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".ContActivity"></activity>
+        <activity android:name=".ContActivity" />
+        <activity android:name=".InformatiiActivity" />
+        <activity android:name=".EditareInformatiiActivity"></activity>
     </application>
 
 </manifest>

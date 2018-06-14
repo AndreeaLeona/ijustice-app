@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/it_info" android:title="Adauga informatii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
-    <item android:id="@+id/it_servicii" android:title="Adauga servicii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
+    <item android:id="@+id/it_info" android:title="Informatii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
+    <item android:id="@+id/it_servicii" android:title="Servicii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
 
     <item android:id="@+id/it_calendar" android:title="Calendar" android:icon="@drawable/ic_event_black_24dp"/>
 

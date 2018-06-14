@@ -58,14 +58,14 @@ public class ContActivity extends AppCompatActivity {
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new AdaugaInformatiiFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Adauga informatii");
+                        getSupportActionBar().setTitle("Informatii");
                         item.setChecked(true);
                         return true;
                     case R.id.it_servicii:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new AdaugaServiciiFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Adauga servicii");
+                        getSupportActionBar().setTitle("Servicii");
                         item.setChecked(true);
                         return true;
                     case R.id.it_calendar:
@@ -79,7 +79,7 @@ public class ContActivity extends AppCompatActivity {
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new SetariFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Adauga Setari");
+                        getSupportActionBar().setTitle("Setari");
                         item.setChecked(true);
                         return true;
 
