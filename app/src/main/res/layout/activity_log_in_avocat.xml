@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".LogInAvocatActivity">
+
+
+    <ImageView
+        android:id="@+id/log_in_imv"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        app:srcCompat="@drawable/login" />
+
+    <EditText
+        android:id="@+id/log_in_et_parola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="217dp"
+        android:ems="10"
+        android:hint="@string/LogInParola"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/log_in_et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/log_in_et_parola"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/LogInEmail"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/log_in_btn_log"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="152dp"
+        android:text="@string/Buton_log_in_avocat" />
+
+    <Button
+        android:id="@+id/log_in_btn_sign_up"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/buton_sign_up" />
+
+    <Button
+        android:id="@+id/log_in_btn_reset_parola"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="92dp"
+        android:text="@string/am_uitat_parola"
+        android:textColor="@color/colorAccent" />
+</RelativeLayout>

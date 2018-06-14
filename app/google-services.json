@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "933012759410",
+    "firebase_url": "https://ijusticelicenta.firebaseio.com",
+    "project_id": "ijusticelicenta",
+    "storage_bucket": "ijusticelicenta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933012759410:android:3c125c60eda2b07b",
+        "android_client_info": {
+          "package_name": "com.ijustice.andreea.ijusticelicenta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933012759410-30j2g7ea15fidgnng4d4j5i2v25hkgu7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ijustice.andreea.ijusticelicenta",
+            "certificate_hash": "83347c7dcae45b7c9a7c74622dbd6e626c4b250e"
+          }
+        },
+        {
+          "client_id": "933012759410-kjcd86peq9nq3rq5jrvs796mkpknrmlo.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "933012759410-kjcd86peq9nq3rq5jrvs796mkpknrmlo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq7A5Ee-zrdfHFlz7irplnhG-bBHTQsz8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933012759410-kjcd86peq9nq3rq5jrvs796mkpknrmlo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

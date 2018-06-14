@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">IJusticeLicenta</string>
+    <string name="bine_ai_venit">Bine ai venit!</string>
+    <string name="TextButonClient">Client</string>
+    <string name="TextButonAvocat">Avocat</string>
+    <string name="LogInEmail">Email</string>
+    <string name="LogInParola">Parola</string>
+    <string name="Buton_log_in_avocat">Log In</string>
+    <string name="buton_sign_up">Sign Up</string>
+    <string name="inregistrare">Inregistrare</string>
+    <string name="am_uitat_parola">Am uitat parola</string>
+    <string name="email_neintrodus">Nu ai introdus adresa de email</string>
+    <string name="parola_neintrodusa">Nu ai introdus parola</string>
+    <string name="inregistrare_utilizator">Inregistrare utilizator...</string>
+    <string name="inregistrare_cu_succes">Inregistrarea a fost efectuata cu succes!</string>
+    <string name="inregistrare_nereusita">Nu s-a putut efectua inregistrarea, incearca din nou!</string>
+    <string name="schimba_parola">Schimba parola</string>
+    <string name="atentionare_email_neintrodus">Adresa de e-mail nu a fost introdusa!</string>
+    <string name="atentionare_parola_neintrodusa">Nu ai introdus parola</string>
+    <string name="lungime_minima_parola">Parola introdusa nu are o lungime minima</string>
+    <string name="atentionare_autentificare_nereusita">Autentificare nereusita! Este ceva in neregula cu adresa de e-mail sau parola introdusa este gresita</string>
+    <string name="progrss_dialog_text">Te rog sa astepti...</string>
+    <string name="log_oyt">Log out</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
