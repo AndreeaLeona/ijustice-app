@@ -52,49 +52,54 @@ public class EditareInformatiiActivity extends AppCompatActivity {
         databaseReference=firebaseDatabase.getReference("users");
         FirebaseUser user=auth.getCurrentUser();
         userId=user.getUid();
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String nume=dataSnapshot.child(userId).child("nume").getValue(String.class);
-                String prenume=dataSnapshot.child(userId).child("prenume").getValue(String.class);
-                String email=dataSnapshot.child(userId).child("email").getValue(String.class);
-                String nrTelefon=dataSnapshot.child(userId).child("numarTelefon").getValue(String.class);
-                int cazuriRezolvate=dataSnapshot.child(userId).child("cazuriRezolvate").getValue(int.class);
-                int cazuriPierdute=dataSnapshot.child(userId).child("cazuriPierdute").getValue(int.class);
-                String oras=dataSnapshot.child(userId).child("oras").getValue(String.class);
-                String strada=dataSnapshot.child(userId).child("strada").getValue(String.class);
-                int nr=dataSnapshot.child(userId).child("nr").getValue(int.class);
-                User u=new User(nume,prenume,email,nrTelefon,cazuriRezolvate,cazuriPierdute,oras,strada,nr);
+        try {
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String nume = dataSnapshot.child(userId).child("nume").getValue(String.class);
+                    String prenume = dataSnapshot.child(userId).child("prenume").getValue(String.class);
+                    String email = dataSnapshot.child(userId).child("email").getValue(String.class);
+                    String nrTelefon = dataSnapshot.child(userId).child("numarTelefon").getValue(String.class);
+                    int cazuriRezolvate = dataSnapshot.child(userId).child("cazuriRezolvate").getValue(int.class);
+                    int cazuriPierdute = dataSnapshot.child(userId).child("cazuriPierdute").getValue(int.class);
+                    String oras = dataSnapshot.child(userId).child("oras").getValue(String.class);
+                    String strada = dataSnapshot.child(userId).child("strada").getValue(String.class);
+                    int nr = dataSnapshot.child(userId).child("nr").getValue(int.class);
+                    User u = new User(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr);
 
 
-                etNume.setText(u.getNume().toString());
-                etPrenume.setText(u.getPrenume().toString());
-                etEmail.setText(u.getEmail().toString());
-                etNrTelefon.setText(u.getNumarTelefon().toString());
-                etCazuriRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
-                etCazuriPierdute.setText(String.valueOf(u.getCazuriPierdute()));
-                etOras.setText(u.getOras().toString());
-                etStrada.setText(u.getStrada().toString());
-                etNr.setText(String.valueOf(u.getNr()));
+                    etNume.setText(u.getNume().toString());
+                    etPrenume.setText(u.getPrenume().toString());
+                    etEmail.setText(u.getEmail().toString());
+                    etNrTelefon.setText(u.getNumarTelefon().toString());
+                    etCazuriRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
+                    etCazuriPierdute.setText(String.valueOf(u.getCazuriPierdute()));
+                    etOras.setText(u.getOras().toString());
+                    etStrada.setText(u.getStrada().toString());
+                    etNr.setText(String.valueOf(u.getNr()));
 
-                btnSalveaza.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        User nou=new User(etNume.toString(),etPrenume.getText().toString(),etEmail.getText().toString(),etNrTelefon.getText().toString(),
-                                Integer.parseInt(etCazuriRezolvate.getText().toString()),Integer.parseInt(etCazuriPierdute.getText().toString()),etOras.getText().toString(),
-                                etStrada.getText().toString(),Integer.parseInt(etNr.getText().toString()));
-                        databaseReference.child(userId).setValue(nou);
-                        Toast.makeText(getApplicationContext(),"Modificarile au fost realizate cu succes1",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
-            }
-        });
+                    btnSalveaza.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            User nou = new User(etNume.getText().toString(), etPrenume.getText().toString(), etEmail.getText().toString(), etNrTelefon.getText().toString(),
+                                    Integer.parseInt(etCazuriRezolvate.getText().toString()), Integer.parseInt(etCazuriPierdute.getText().toString()), etOras.getText().toString(),
+                                    etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()));
+                            databaseReference.child(userId).setValue(nou);
+                            Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }catch(Exception ex){
+            System.out.println("Eroare");
+        }
 
 
 

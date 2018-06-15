@@ -54,6 +54,7 @@ public class InformatiiActivity extends AppCompatActivity {
         databaseReference=firebaseDatabase.getReference();
         FirebaseUser user=auth.getCurrentUser();
         userId=user.getUid();
+        try {
 
 
             btnSalveaza.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +85,8 @@ public class InformatiiActivity extends AppCompatActivity {
                     try {
 
                         databaseReference.child("users").child(userId).setValue(informatii);
-                        Toast.makeText(getApplicationContext(),"Datele tale au fost salvate cu succes!",Toast.LENGTH_SHORT).show();
-                    }catch(Exception ex){
+                        Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
+                    } catch (Exception ex) {
                         Toast.makeText(getApplicationContext(), "Datele tale nu au fost salvate, te rog sa verifici conexiunea la internet", Toast.LENGTH_SHORT).show();
 
 
@@ -94,7 +95,9 @@ public class InformatiiActivity extends AppCompatActivity {
 
                 }
             });
-
+        }catch(Exception ex){
+            System.out.println("Eroare" + ex);
+        }
 
     }
 }
