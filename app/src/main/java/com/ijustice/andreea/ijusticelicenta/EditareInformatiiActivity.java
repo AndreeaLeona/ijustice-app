@@ -33,26 +33,29 @@ public class EditareInformatiiActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private String userId;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_editare_informatii);
-        etNume=(EditText)findViewById(R.id.edit_et_nume);
-        etEmail=(EditText)findViewById(R.id.edit_et_email);
-        etPrenume=(EditText) findViewById(R.id.edit_et_prenume);
-        etNrTelefon=(EditText)findViewById(R.id.edit_et_nr_telefon);
-        etCazuriRezolvate=(EditText)findViewById(R.id.edit_et_cazuri_rezolvate);
-        etCazuriPierdute=(EditText)findViewById(R.id.edit_et_cazuri_pierdute);
-        etOras=(EditText)findViewById(R.id.edit_et_oras);
-        etStrada=(EditText) findViewById(R.id.edit_et_strada);
-        etNr=(EditText)findViewById(R.id.edit_et_nr);
-        btnSalveaza=(Button) findViewById(R.id.edit_btn_salveaza_modificari);
-        auth=FirebaseAuth.getInstance();
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference("users");
-        FirebaseUser user=auth.getCurrentUser();
-        userId=user.getUid();
-        try {
+    protected void onCreate(Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_editare_informatii);
+            try{
+            etNume = (EditText) findViewById(R.id.edit_et_nume);
+            etEmail = (EditText) findViewById(R.id.edit_et_email);
+            etPrenume = (EditText) findViewById(R.id.edit_et_prenume);
+            etNrTelefon = (EditText) findViewById(R.id.edit_et_nr_telefon);
+            etCazuriRezolvate = (EditText) findViewById(R.id.edit_et_cazuri_rezolvate);
+            etCazuriPierdute = (EditText) findViewById(R.id.edit_et_cazuri_pierdute);
+            etOras = (EditText) findViewById(R.id.edit_et_oras);
+            etStrada = (EditText) findViewById(R.id.edit_et_strada);
+            etNr = (EditText) findViewById(R.id.edit_et_nr);
+            btnSalveaza = (Button) findViewById(R.id.edit_btn_salveaza_modificari);
+            auth = FirebaseAuth.getInstance();
+            firebaseDatabase = FirebaseDatabase.getInstance();
+            databaseReference = firebaseDatabase.getReference("users");
+            FirebaseUser user = auth.getCurrentUser();
+            userId = user.getUid();
+
+
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -68,15 +71,18 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                     User u = new User(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr);
 
 
-                    etNume.setText(u.getNume().toString());
-                    etPrenume.setText(u.getPrenume().toString());
-                    etEmail.setText(u.getEmail().toString());
-                    etNrTelefon.setText(u.getNumarTelefon().toString());
-                    etCazuriRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
-                    etCazuriPierdute.setText(String.valueOf(u.getCazuriPierdute()));
-                    etOras.setText(u.getOras().toString());
-                    etStrada.setText(u.getStrada().toString());
-                    etNr.setText(String.valueOf(u.getNr()));
+
+
+              etNume.setText(u.getNume().toString());
+              etPrenume.setText(u.getPrenume().toString());
+              etEmail.setText(u.getEmail().toString());
+              etNrTelefon.setText(u.getNumarTelefon().toString());
+              etCazuriRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
+              etCazuriPierdute.setText(String.valueOf(u.getCazuriPierdute()));
+              etOras.setText(u.getOras().toString());
+              etStrada.setText(u.getStrada().toString());
+              etNr.setText(String.valueOf(u.getNr()));
+
 
 
                     btnSalveaza.setOnClickListener(new View.OnClickListener() {
@@ -94,16 +100,15 @@ public class EditareInformatiiActivity extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
             });
-        }catch(Exception ex){
-            System.out.println("Eroare");
+            }catch (Exception ex){
+                Toast.makeText(getApplicationContext(),"Nu exista date de editat",Toast.LENGTH_SHORT).show();
+            }
+
+
         }
 
-
-
-    }
 
 
 }

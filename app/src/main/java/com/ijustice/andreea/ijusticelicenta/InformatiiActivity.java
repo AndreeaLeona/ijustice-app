@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.ijustice.andreea.ijusticelicenta.models.User;
@@ -35,6 +36,7 @@ public class InformatiiActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private String userId;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,9 @@ public class InformatiiActivity extends AppCompatActivity {
         databaseReference=firebaseDatabase.getReference();
         FirebaseUser user=auth.getCurrentUser();
         userId=user.getUid();
+
         try {
+
 
 
             btnSalveaza.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +90,7 @@ public class InformatiiActivity extends AppCompatActivity {
 
                         databaseReference.child("users").child(userId).setValue(informatii);
                         Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
+
                     } catch (Exception ex) {
                         Toast.makeText(getApplicationContext(), "Datele tale nu au fost salvate, te rog sa verifici conexiunea la internet", Toast.LENGTH_SHORT).show();
 
@@ -96,7 +101,7 @@ public class InformatiiActivity extends AppCompatActivity {
                 }
             });
         }catch(Exception ex){
-            System.out.println("Eroare" + ex);
+            Toast.makeText(getApplicationContext(), "Eroare!", Toast.LENGTH_SHORT).show();
         }
 
     }

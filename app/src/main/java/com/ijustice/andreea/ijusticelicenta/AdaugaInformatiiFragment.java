@@ -38,6 +38,10 @@ public class AdaugaInformatiiFragment extends Fragment {
 
 
 
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,11 +50,11 @@ public class AdaugaInformatiiFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_adauga_informatii, container, false);
         btnAdauga=v.findViewById(R.id.adaugainf_btn_adauga);
         btnEdit=v.findViewById(R.id.adaugainf_btn_editeaza);
-        auth=FirebaseAuth.getInstance();
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference();
-        FirebaseUser user=auth.getCurrentUser();
-        userId=user.getUid();
+       // auth=FirebaseAuth.getInstance();
+       // firebaseDatabase=FirebaseDatabase.getInstance();
+       // databaseReference=firebaseDatabase.getReference();
+       // FirebaseUser user=auth.getCurrentUser();
+       // userId=user.getUid();
 
         btnAdauga.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,10 +66,38 @@ public class AdaugaInformatiiFragment extends Fragment {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                auth=FirebaseAuth.getInstance();
+                firebaseDatabase=FirebaseDatabase.getInstance();
+                databaseReference=firebaseDatabase.getReference();
+                FirebaseUser user=auth.getCurrentUser();
+                userId=user.getUid();
+                DatabaseReference referintaUser=databaseReference.child("users").child(userId);
+                ValueEventListener eventListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.exists()) {
 
-                startActivity(new Intent(getActivity(),EditareInformatiiActivity.class));
+
+                            startActivity(new Intent(getActivity(), EditareInformatiiActivity.class));
+
+
+
+                        }else{
+                            Toast.makeText(getActivity(),"Nu exista date de editat!",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {}
+                };
+                referintaUser.addListenerForSingleValueEvent(eventListener);
+
             }
         });
+
+
+
+
         return v;
 
     }
