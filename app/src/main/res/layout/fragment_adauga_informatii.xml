@@ -9,7 +9,7 @@
     tools:context=".AdaugaInformatiiFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/adaugainf_btn_adauga"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         android:text="Adauga"
         android:background="@color/colorPrimary"/>
 
-    <android.support.v7.widget.AppCompatButton
+    <Button
         android:id="@+id/adaugainf_btn_editeaza"
         android:layout_width="142dp"
         android:layout_height="wrap_content"

@@ -23,7 +23,8 @@
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".ContActivity" />
         <activity android:name=".InformatiiActivity" />
-        <activity android:name=".EditareInformatiiActivity"></activity>
+        <activity android:name=".EditareInformatiiActivity" />
+        <activity android:name=".AdaugareEvenimentActivity"></activity>
     </application>
 
 </manifest>

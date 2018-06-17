@@ -1,17 +1,21 @@
 package com.ijustice.andreea.ijusticelicenta;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CalendarFragment extends Fragment {
+    CalendarView calendarView;
 
 
     public CalendarFragment() {
@@ -23,7 +27,16 @@ public class CalendarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calendar, container, false);
+        View v= inflater.inflate(R.layout.fragment_calendar, container, false);
+
+        calendarView= v.findViewById(R.id.calendar_calendarview);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                startActivity(new Intent(getActivity(),AdaugareEvenimentActivity.class));
+            }
+        });
+        return v;
     }
 
 }
