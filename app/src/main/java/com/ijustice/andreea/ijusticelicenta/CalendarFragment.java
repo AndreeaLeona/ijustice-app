@@ -33,7 +33,10 @@ public class CalendarFragment extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                startActivity(new Intent(getActivity(),AdaugareEvenimentActivity.class));
+                String date= dayOfMonth + "/" + month + "/" + year;
+                Intent intent=new Intent(getActivity(),AdaugareEvenimentActivity.class);
+                intent.putExtra("data",date);
+                startActivity(intent);
             }
         });
         return v;

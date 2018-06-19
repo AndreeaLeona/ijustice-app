@@ -5,14 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdaugareEvenimentActivity">
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="22dp">
+
         <ListView
             android:id="@+id/adgeveniment_lv_evenimente"
             android:layout_width="match_parent"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:layout_height="350dp"></ListView>
+            android:layout_height="300dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"></ListView>
 
 
     </FrameLayout>
@@ -28,6 +33,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="74dp" />
 
+    <TextView
+        android:id="@+id/adgeveniment_tv_mesaj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="203dp"
+        android:textAlignment="center"
+        android:textSize="15dp" />
 
 
 </RelativeLayout>
