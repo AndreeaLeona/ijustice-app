@@ -15,23 +15,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_marginBottom="41dp"
         android:text="Adauga"
-        android:background="@color/colorPrimary"/>
+        android:background="@drawable/rounded_button"/>
 
     <Button
         android:id="@+id/adaugainf_btn_editeaza"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="140dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/rounded_button"
         android:text="Editeaza" />
 
-
- 
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adaugainf_btn_editeaza"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/info" />
 
 
 </RelativeLayout>

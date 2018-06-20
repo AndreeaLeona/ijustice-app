@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
+    android:background="@color/darkgray"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -20,21 +20,26 @@
 
     <Button
         android:id="@+id/main_btn_client"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="208dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="219dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/TextButonClient"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/main_btn_avocat"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="139dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="146dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
         android:text="@string/TextButonAvocat"
         android:textStyle="bold" />
 

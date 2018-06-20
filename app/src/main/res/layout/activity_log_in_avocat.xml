@@ -24,6 +24,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="217dp"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_login_black_lacatel"
+
         android:hint="@string/LogInParola"
         android:inputType="textPassword" />
 
@@ -31,6 +33,7 @@
         android:id="@+id/log_in_et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_face_login"
         android:layout_above="@+id/log_in_et_parola"
         android:layout_centerHorizontal="true"
         android:ems="10"

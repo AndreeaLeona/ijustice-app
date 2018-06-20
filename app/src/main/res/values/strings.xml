@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IJusticeLicenta</string>
     <string name="bine_ai_venit">Bine ai venit!</string>
-    <string name="TextButonClient">Client</string>
+    <string name="TextButonClient">Potential client/Client</string>
     <string name="TextButonAvocat">Avocat</string>
     <string name="LogInEmail">Email</string>
     <string name="LogInParola">Parola</string>

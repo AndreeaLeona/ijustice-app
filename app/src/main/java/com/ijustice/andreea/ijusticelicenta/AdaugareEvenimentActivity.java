@@ -81,7 +81,7 @@ public class AdaugareEvenimentActivity extends AppCompatActivity {
                 tvMesaj.setText("");
 
             }else {
-                    tvMesaj.setText("Nu exista notie adaugate pentru aceasta data!");
+                    tvMesaj.setText("Nu exista notite adaugate pentru aceasta data!");
                 }
 
 

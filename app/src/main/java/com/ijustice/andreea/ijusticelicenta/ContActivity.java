@@ -22,6 +22,8 @@ public class ContActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
     private FragmentTransaction fragmentTransaction;
+    TextView tvEmail;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class ContActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cont);
         drawerLayout=(DrawerLayout) findViewById(R.id.draw);
         navigationView=(NavigationView) findViewById(R.id.cont_navigation_view);
+        tvEmail=(TextView) findViewById(R.id.tv_header_email);
+        auth=FirebaseAuth.getInstance();
+        FirebaseUser user=auth.getCurrentUser();
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.drawer_open,R.string.drawer_close);
 
 
@@ -41,13 +46,13 @@ public class ContActivity extends AppCompatActivity {
         fragmentTransaction.commit();
         getSupportActionBar().setTitle("Home");
 
-        auth=FirebaseAuth.getInstance();
+
         if(auth.getCurrentUser()==null){
            finish();
            startActivity(new Intent(getApplicationContext(),LogInAvocatActivity.class));
 
         }
-        FirebaseUser user=auth.getCurrentUser();
+
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
