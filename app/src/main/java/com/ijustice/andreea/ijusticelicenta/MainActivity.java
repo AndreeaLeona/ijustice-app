@@ -15,12 +15,21 @@ public class MainActivity extends AppCompatActivity {
     public void init(){
         btnAvocat=(Button)findViewById(R.id.main_btn_avocat);
         btnClient=(Button)findViewById(R.id.main_btn_client);
+        getSupportActionBar().setTitle("Justice");
+
         btnAvocat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,LogInAvocatActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        btnClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ClientActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -37,6 +37,7 @@ public class LogInAvocatActivity extends AppCompatActivity {
         btnUitatParola=(Button)findViewById(R.id.log_in_btn_reset_parola);
         etEmail=(EditText)findViewById(R.id.log_in_et_email);
         etParola=(EditText)findViewById(R.id.log_in_et_parola);
+        getSupportActionBar().setTitle("Justice");
 
 
         auth=FirebaseAuth.getInstance();

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/darkgray"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -11,20 +11,21 @@
         android:id="@+id/main_tw_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textColor="@color/colorAccent"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="109dp"
-        android:text="@string/bine_ai_venit" />
+        android:layout_marginTop="12dp"
+        android:text="@string/bine_ai_venit"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/main_btn_client"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="219dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="115dp"
+        android:layout_marginStart="51dp"
         android:background="@drawable/rounded_button"
         android:backgroundTint="@color/colorPrimary"
         android:text="@string/TextButonClient"
@@ -32,18 +33,24 @@
 
     <Button
         android:id="@+id/main_btn_avocat"
-        android:layout_width="70dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="146dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/main_btn_client"
+        android:layout_marginEnd="51dp"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/colorPrimary"
         android:gravity="center"
         android:text="@string/TextButonAvocat"
         android:textStyle="bold" />
 
-
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="254dp"
+        android:layout_height="300dp"
+        android:layout_above="@+id/main_btn_client"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/simbol2" />
 
 
 </RelativeLayout>
