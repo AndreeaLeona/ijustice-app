@@ -26,7 +26,8 @@
         <activity android:name=".EditareInformatiiActivity" />
         <activity android:name=".AdaugareEvenimentActivity" />
         <activity android:name=".DetaliiEvenimentActivity" />
-        <activity android:name=".ClientActivity"></activity>
+        <activity android:name=".ClientActivity" />
+        <activity android:name=".GenerareAvocatiActivity"></activity>
     </application>
 
 </manifest>
