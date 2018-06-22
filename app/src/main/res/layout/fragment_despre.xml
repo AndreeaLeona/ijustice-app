@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/despre"
+    tools:context=".DespreFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:text="@string/aplicatia_face_posibil_ca_informatiile_despre_serviciile_tale_sa_ajunga_la_potentialii_clienti_de_asemenea_poti_gestiona_cu_ajutorul_aplicatiei_datele_despre_clientii_cu_care_comunici_notite_care_te_ajuta_in_activitatile_de_zi_cu_zi"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:textStyle="italic|bold"
+        android:textSize="25dp"
+
+        android:layout_marginBottom="76dp"
+        android:text="Date de contact: nica.leona97@gmail.com" />
+
+</RelativeLayout>

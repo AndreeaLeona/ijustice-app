@@ -73,6 +73,13 @@ public class ContActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Servicii");
                         item.setChecked(true);
                         return true;
+                    case R.id.it_clienti:
+                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.cont_main_container,new ClientiFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle("Clienti");
+                        item.setChecked(true);
+                        return true;
                     case R.id.it_calendar:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new CalendarFragment());
@@ -85,6 +92,13 @@ public class ContActivity extends AppCompatActivity {
                         fragmentTransaction.replace(R.id.cont_main_container,new SetariFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("Setari");
+                        item.setChecked(true);
+                        return true;
+                    case R.id.it_despre:
+                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.cont_main_container,new DespreFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle("Despre");
                         item.setChecked(true);
                         return true;
 

@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/it_info" android:title="Informatii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
     <item android:id="@+id/it_servicii" android:title="Servicii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
-
+    <item android:id="@+id/it_clienti" android:title="Clienti" android:icon="@drawable/ic_mode_edit_black_24dp"/>
     <item android:id="@+id/it_calendar" android:title="Calendar" android:icon="@drawable/ic_event_black_24dp"/>
-
     <item android:id="@+id/it_setari" android:title="Setari" android:icon="@drawable/ic_settings_black_24dp"/>
+    <item android:id="@+id/it_despre" android:title="Despre" android:icon="@drawable/ic_info_outline_black_24dp"/>
+
     <item android:id="@+id/it_out" android:title="Log out" android:icon="@drawable/ic_account_circle_black_24dp"/>
+
+
 
 
 
