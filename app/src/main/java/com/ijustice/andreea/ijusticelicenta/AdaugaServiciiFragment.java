@@ -63,7 +63,7 @@ public class AdaugaServiciiFragment extends Fragment {
                 servicii.put("nume", numeServiciuSelectat);
                 try {
 
-                    databaseReference.child("servicii").child(userId).child(idServiuciu).setValue(servicii);
+                    databaseReference.child("servicii").child(userId).child("nume").setValue(numeServiciuSelectat);
                     Toast.makeText(getContext(), "Serviciul tau a fost salvat!!", Toast.LENGTH_SHORT).show();
 
                 } catch (Exception ex) {

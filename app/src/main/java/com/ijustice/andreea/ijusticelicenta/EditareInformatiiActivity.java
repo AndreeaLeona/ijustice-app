@@ -27,6 +27,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
     EditText etOras;
     EditText etStrada;
     EditText etNr;
+    EditText etSpecializare;
     Button btnSalveaza;
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
@@ -48,6 +49,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
             etOras = (EditText) findViewById(R.id.edit_et_oras);
             etStrada = (EditText) findViewById(R.id.edit_et_strada);
             etNr = (EditText) findViewById(R.id.edit_et_nr);
+            etSpecializare=(EditText)findViewById(R.id.edit_et_specializare);
             btnSalveaza = (Button) findViewById(R.id.edit_btn_salveaza_modificari);
             auth = FirebaseAuth.getInstance();
             firebaseDatabase = FirebaseDatabase.getInstance();
@@ -68,7 +70,8 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                     String oras = dataSnapshot.child(userId).child("oras").getValue(String.class);
                     String strada = dataSnapshot.child(userId).child("strada").getValue(String.class);
                     int nr = dataSnapshot.child(userId).child("nr").getValue(int.class);
-                    User u = new User(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr);
+                    String specializare=dataSnapshot.child(userId).child("specializare").getValue(String.class);
+                    User u = new User(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
 
 
 
@@ -90,7 +93,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             User nou = new User(etNume.getText().toString(), etPrenume.getText().toString(), etEmail.getText().toString(), etNrTelefon.getText().toString(),
                                     Integer.parseInt(etCazuriRezolvate.getText().toString()), Integer.parseInt(etCazuriPierdute.getText().toString()), etOras.getText().toString(),
-                                    etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()));
+                                    etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()),etSpecializare.getText().toString());
                             databaseReference.child(userId).setValue(nou);
                             Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
                                     Toast.LENGTH_SHORT).show();

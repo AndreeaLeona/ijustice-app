@@ -66,13 +66,6 @@ public class ContActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Informatii");
                         item.setChecked(true);
                         return true;
-                    case R.id.it_servicii:
-                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.cont_main_container,new AdaugaServiciiFragment());
-                        fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Servicii");
-                        item.setChecked(true);
-                        return true;
                     case R.id.it_clienti:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new ClientiFragment());

@@ -27,7 +27,10 @@
         <activity android:name=".AdaugareEvenimentActivity" />
         <activity android:name=".DetaliiEvenimentActivity" />
         <activity android:name=".ClientActivity" />
-        <activity android:name=".GenerareAvocatiActivity"></activity>
+        <activity android:name=".GenerareAvocatiActivity" />
+        <activity android:name=".AdaugaClientActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".SignUpClientActivity"></activity>
     </application>
 
 </manifest>

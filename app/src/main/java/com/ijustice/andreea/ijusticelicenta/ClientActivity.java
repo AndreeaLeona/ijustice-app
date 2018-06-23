@@ -3,12 +3,17 @@ package com.ijustice.andreea.ijusticelicenta;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
@@ -18,6 +23,8 @@ import java.util.List;
 public class ClientActivity extends AppCompatActivity {
     Spinner probleme;
     TextView tvDetalii;
+    private FirebaseAuth auth;
+
     static List<String> listaProbleme;
     String problemaCurenta;
     Button btnGaseste;
@@ -30,6 +37,13 @@ public class ClientActivity extends AppCompatActivity {
         probleme=(Spinner)findViewById(R.id.client_spinner);
         btnGaseste=(Button)findViewById(R.id.client_btn_gaseste_avocat);
         tvDetalii=(TextView)findViewById(R.id.client_tv_detalii_problema);
+        auth=FirebaseAuth.getInstance();
+        FirebaseUser user=auth.getCurrentUser();
+        if(auth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(getApplicationContext(),LogInActivity.class));
+
+        }
         getSupportActionBar().setTitle("Justice");
          listaProbleme=new ArrayList<String>();
         listaProbleme.add("Agresiune verbala");
@@ -71,5 +85,23 @@ public class ClientActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.meniu_client,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id= item.getItemId();
+        if(id==R.id.meniu_out){
+            auth.signOut();
+            finish();
+            startActivity(new Intent(getApplicationContext(),LogInActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -4,19 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/orangeanother"
     tools:context=".InformatiiActivity">
 
     <FrameLayout
         android:layout_width="295dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:background="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <EditText
                 android:id="@+id/info_et_nume"
@@ -53,6 +59,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Numar cazuri pierdute" />
+            <EditText
+                android:id="@+id/info_et_specializare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Specializare" />
 
             <TextView
                 android:id="@+id/info_tv_adresa"
@@ -79,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Numar bloc/casa" />
 
+
             <Button
                 android:id="@+id/info_btn_salveaza"
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -87,6 +99,8 @@
                 android:text="Salveaza"
                 android:textColor="@color/colorAccent" />
         </LinearLayout>
+        </ScrollView>
+
     </FrameLayout>
 
 </RelativeLayout>

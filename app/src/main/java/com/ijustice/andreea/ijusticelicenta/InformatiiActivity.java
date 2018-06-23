@@ -30,6 +30,7 @@ public class InformatiiActivity extends AppCompatActivity {
     EditText etOras;
     EditText etStrada;
     EditText etNr;
+    EditText etSpecializare;
     Button btnSalveaza;
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
@@ -47,6 +48,7 @@ public class InformatiiActivity extends AppCompatActivity {
         etNrTelefon=(EditText)findViewById(R.id.info_et_nr_telefon);
         etCazuriRezolvate=(EditText)findViewById(R.id.info_et_nr_cazuri_rezolvate);
         etCazuriPierdute=(EditText)findViewById(R.id.info_et_nr_cazuri_pierdute);
+        etSpecializare=(EditText)findViewById(R.id.info_et_specializare) ;
         etOras=(EditText)findViewById(R.id.info_et_oras);
         etStrada=(EditText) findViewById(R.id.info_et_strada);
         etNr=(EditText)findViewById(R.id.info_et_nr);
@@ -73,7 +75,8 @@ public class InformatiiActivity extends AppCompatActivity {
                     String oras = etOras.getText().toString();
                     String strada = etStrada.getText().toString();
                     int nr = Integer.parseInt(etNr.getText().toString());
-                    User u = new User(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr);
+                    String specializare=etSpecializare.getText().toString();
+                    User u = new User(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
 
                     Map informatii = new HashMap<>();
 
@@ -86,6 +89,7 @@ public class InformatiiActivity extends AppCompatActivity {
                     informatii.put("oras", u.getOras());
                     informatii.put("strada", u.getStrada());
                     informatii.put("nr", u.getNr());
+                    informatii.put("specializare",u.getSpecializare());
                     try {
 
                         databaseReference.child("users").child(userId).setValue(informatii);

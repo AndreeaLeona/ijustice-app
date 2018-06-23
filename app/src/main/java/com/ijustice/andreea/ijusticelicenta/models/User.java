@@ -10,9 +10,10 @@ public class User {
     private String oras;
     private String strada;
     private int nr;
+    private String specializare;
 
     public User(String nume, String prenume, String email, String numarTelefon,
-                int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr) {
+                int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr,String specializare) {
         this.nume = nume;
         this.prenume = prenume;
         this.email = email;
@@ -22,6 +23,7 @@ public class User {
         this.oras = oras;
         this.strada = strada;
         this.nr = nr;
+        this.specializare=specializare;
     }
 
     public User() {
@@ -95,6 +97,14 @@ public class User {
         return nr;
     }
 
+    public String getSpecializare() {
+        return specializare;
+    }
+
+    public void setSpecializare(String specializare) {
+        this.specializare = specializare;
+    }
+
     public void setNr(int nr) {
         this.nr = nr;
     }
@@ -110,7 +120,7 @@ public class User {
                 ", cazuriPierdute=" + cazuriPierdute +
                 ", oras='" + oras + '\'' +
                 ", strada='" + strada + '\'' +
-                ", nr=" + nr +
+                ", nr=" + nr + '\'' + ", specializare='" + specializare +
                 '}';
     }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpClientActivity">
+
+    <EditText
+        android:id="@+id/sign_up_client_et_parola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        android:ems="10"
+        android:drawableLeft="@drawable/ic_login_black_lacatel"
+        android:hint="@string/LogInParola"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="308dp" />
+    <EditText
+        android:id="@+id/sign_up_client_et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/LogInEmail"
+        android:drawableLeft="@drawable/ic_face_login"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/sign_up_client_btn_inregistrare"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="92dp"
+        android:text="@string/inregistrare" />
+
+</RelativeLayout>

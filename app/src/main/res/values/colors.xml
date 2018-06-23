@@ -6,7 +6,9 @@
     <color name="white">#FFFFFF</color>
     <color name="blue">#87CEFA</color>
     <color name="gray">#808b96</color>
-    <color name="darkgray">#737577</color>
+    <color name="orangeanother">#ffa166</color>
+    <color name="orange">#ff9527 </color>
+    <color name="dark">#737577</color>
     <color name="darkblue">#0b63ba</color>
 
 </resources>
