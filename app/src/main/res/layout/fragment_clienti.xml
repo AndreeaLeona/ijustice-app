@@ -22,7 +22,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="162dp"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/grenaInchis"
         android:text="Vizualizeaza clienti" />
     <Button
         android:id="@+id/clienti_btn_adauga"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/grenaInchis"
         android:text="Adauga clienti" />
 
 

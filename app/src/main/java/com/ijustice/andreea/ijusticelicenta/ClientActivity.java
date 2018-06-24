@@ -44,7 +44,7 @@ public class ClientActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),LogInActivity.class));
 
         }
-        getSupportActionBar().setTitle("Justice");
+        getSupportActionBar().setTitle("");
          listaProbleme=new ArrayList<String>();
         listaProbleme.add("Agresiune verbala");
         listaProbleme.add("Accident rutier");
@@ -101,6 +101,11 @@ public class ClientActivity extends AppCompatActivity {
             auth.signOut();
             finish();
             startActivity(new Intent(getApplicationContext(),LogInActivity.class));
+        }else if(id==R.id.meniu_despre_tine){
+            startActivity(new Intent(getApplicationContext(),DespreClientActivity.class));
+        }else if(id==R.id.meniu_chat){
+            startActivity(new Intent(getApplicationContext(),ListaEmailuriAvocatiActivity.class));
+
         }
         return super.onOptionsItemSelected(item);
     }

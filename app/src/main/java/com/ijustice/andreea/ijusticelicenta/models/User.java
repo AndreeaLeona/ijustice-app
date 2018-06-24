@@ -111,16 +111,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "nume='" + nume + '\'' +
-                ", prenume='" + prenume + '\'' +
-                ", email='" + email + '\'' +
-                ", numarTelefon='" + numarTelefon + '\'' +
-                ", cazuriRezolvate=" + cazuriRezolvate +
-                ", cazuriPierdute=" + cazuriPierdute +
-                ", oras='" + oras + '\'' +
-                ", strada='" + strada + '\'' +
-                ", nr=" + nr + '\'' + ", specializare='" + specializare +
-                '}';
+        return  "Nume avocat: " + this.nume + " " + this.prenume + "\n" +
+                "Specializare: " + this.specializare + "\n" +
+                "Informatii contact:" + this.email + " " + this.numarTelefon + "\n"+
+                "Cazuri pierdute: " + this.cazuriPierdute + ", " + "Cazuri rezolvate: "
+                +this.cazuriRezolvate + "\n" + "Adresa: "   + this.oras + ", " + this.strada + ", " +this.nr + "\n";
     }
 }

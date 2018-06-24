@@ -9,12 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="238dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/solution"
+        app:srcCompat="@drawable/solutions"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="75dp" />
 
@@ -43,15 +41,15 @@
         android:layout_marginBottom="124dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textColor="@color/darkblue"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/client_btn_gaseste_avocat"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:text="Gaseste avocat"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/grenaInchis"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

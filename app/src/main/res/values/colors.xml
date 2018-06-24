@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4ba4a1</color>
-    <color name="colorPrimaryDark">#35a5a2</color>
-    <color name="colorAccent">#212121</color>
+
+    <color name="colorAccent">#737577</color>
     <color name="white">#FFFFFF</color>
-    <color name="blue">#87CEFA</color>
-    <color name="gray">#808b96</color>
-    <color name="orangeanother">#ffa166</color>
-    <color name="orange">#ff9527 </color>
+    <color name="grebaLight">#ff6090</color>
+    <color name="gray">#decfd6</color>
+    <color name="grenaSecundar">#e91e63</color>
+    <color name="grenaInchis">#b0003a </color>
     <color name="dark">#737577</color>
     <color name="darkblue">#0b63ba</color>
 

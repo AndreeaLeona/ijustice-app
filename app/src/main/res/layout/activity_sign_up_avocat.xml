@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".SignUpAvocatActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="117dp"
+        android:text="Sign Up"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold|italic" />
+
     <EditText
         android:id="@+id/sign_up_et_parola"
         android:layout_width="wrap_content"
@@ -31,14 +42,25 @@
 
     <Button
         android:id="@+id/sign_up_btn_inregistrare"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/grenaInchis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="92dp"
+        android:text="@string/inregistrare"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/sign_up_avocat_tv_log_in"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"
-        android:layout_marginBottom="92dp"
-        android:text="@string/inregistrare" />
+        android:layout_marginBottom="52dp"
+        android:textAlignment="center"
+        android:text="Esti deja inregistrat?Intra in cont de aici"
+        android:textColor="@color/grenaInchis" />
 
 
 </RelativeLayout>

@@ -34,7 +34,6 @@ public class LogInAvocatActivity extends AppCompatActivity {
 
         btnSignUp=(Button)findViewById(R.id.log_in_btn_sign_up);
         btnLogIn=(Button)findViewById(R.id.log_in_btn_log);
-        btnUitatParola=(Button)findViewById(R.id.log_in_btn_reset_parola);
         etEmail=(EditText)findViewById(R.id.log_in_et_email);
         etParola=(EditText)findViewById(R.id.log_in_et_parola);
         getSupportActionBar().setTitle("Justice");
@@ -55,13 +54,7 @@ public class LogInAvocatActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnUitatParola.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(LogInAvocatActivity.this,ResetPasswordActivity.class);
-                startActivity(intent);
-            }
-        });
+
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

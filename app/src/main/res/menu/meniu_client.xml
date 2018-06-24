@@ -10,4 +10,12 @@
         android:id="@+id/meniu_despre"
         android:title="Despre"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/meniu_despre_tine"
+        android:title="Spene-ne ceva despre tine"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/meniu_chat"
+        android:title="Cere ajutorul"
+        app:showAsAction="ifRoom" />
 </menu>

@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".DetaliiEvenimentActivity">
-
+    tools:context=".DespreClientActivity">
     <FrameLayout
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-     >
-
+        android:layout_marginTop="50dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="38dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,11 +23,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/detalii_nota_et_titlu"
+                    android:id="@+id/despre_client_et_nume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_edit_items"
-                    android:hint="Titlu" />
+                    android:drawableLeft="@drawable/ic_face_login" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -37,11 +34,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/detalii_nota_et_data"
+                    android:id="@+id/despre_client_et_adresa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_edit_items"
-                    android:hint="Data" />
+                    android:drawableLeft="@drawable/ic_place_black" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -49,27 +45,37 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/detalii_nota_et_detalii"
+                    android:id="@+id/despre_client_et_telefon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_edit_items"
-                    android:hint="Detalii" />
+                    android:drawableLeft="@drawable/ic_phone_black" />
             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/despre_client_et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_email_black_24dp" />
+            </android.support.design.widget.TextInputLayout>
+
+
         </LinearLayout>
+
+
     </FrameLayout>
 
     <Button
-        android:id="@+id/detalii_nota_btn_salveaza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="128dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/rounded_button"
         android:backgroundTint="@color/grenaInchis"
-        android:text="Salveaza" />
-
-
-
+        android:text="Adauga" />
 
 </RelativeLayout>

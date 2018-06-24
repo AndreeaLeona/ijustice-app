@@ -11,24 +11,22 @@
     <!-- TODO: Update blank fragment layout -->
     <Button
         android:id="@+id/adaugainf_btn_adauga"
-        android:layout_width="142dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_marginBottom="41dp"
-        android:text="Adauga"
-        android:background="@drawable/rounded_button"/>
+        android:layout_marginBottom="69dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/grenaInchis"
+        android:text="Adauga" />
 
     <Button
         android:id="@+id/adaugainf_btn_editeaza"
-        android:layout_width="142dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="135dp"
         android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/grenaInchis"
         android:text="Editeaza" />
 
     <ImageView
@@ -36,8 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="58dp"
-        android:src="@drawable/inform" />
+        android:src="@drawable/info2" />
 
 
 </RelativeLayout>

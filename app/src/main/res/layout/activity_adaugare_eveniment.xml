@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/orangeanother"
     android:layout_height="match_parent"
     tools:context=".AdaugareEvenimentActivity">
 
@@ -13,7 +12,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@color/white"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
 
@@ -28,10 +26,10 @@
 
     <Button
         android:id="@+id/adgeveniment_btn_adauga"
-        android:layout_width="85dp"
+        android:layout_width="match_parent"
         android:text="Adauga"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/grenaInchis"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

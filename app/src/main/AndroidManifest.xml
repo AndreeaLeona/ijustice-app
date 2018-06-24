@@ -30,7 +30,9 @@
         <activity android:name=".GenerareAvocatiActivity" />
         <activity android:name=".AdaugaClientActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".SignUpClientActivity"></activity>
+        <activity android:name=".SignUpClientActivity" />
+        <activity android:name=".DespreClientActivity" />
+        <activity android:name=".ListaEmailuriAvocatiActivity"></activity>
     </application>
 
 </manifest>

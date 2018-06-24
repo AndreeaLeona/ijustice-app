@@ -33,7 +33,6 @@ public class LogInActivity extends AppCompatActivity {
 
         btnSignUp=(Button)findViewById(R.id.log_in_btn_client_sign_up);
         btnLogIn=(Button)findViewById(R.id.log_in_client_btn_log);
-        btnUitatParola=(Button)findViewById(R.id.log_in_client_btn_reset_parola);
         etEmail=(EditText)findViewById(R.id.log_in_client_et_email);
         etParola=(EditText)findViewById(R.id.log_in_client_et_parola);
         getSupportActionBar().setTitle("Justice");
