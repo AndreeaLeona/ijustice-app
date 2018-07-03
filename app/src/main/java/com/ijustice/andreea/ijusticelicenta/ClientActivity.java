@@ -38,6 +38,7 @@ public class ClientActivity extends AppCompatActivity {
         btnGaseste=(Button)findViewById(R.id.client_btn_gaseste_avocat);
         tvDetalii=(TextView)findViewById(R.id.client_tv_detalii_problema);
         auth=FirebaseAuth.getInstance();
+        getSupportActionBar().setTitle("");
         FirebaseUser user=auth.getCurrentUser();
         if(auth.getCurrentUser()==null){
             finish();
@@ -46,7 +47,7 @@ public class ClientActivity extends AppCompatActivity {
         }
         getSupportActionBar().setTitle("");
          listaProbleme=new ArrayList<String>();
-        listaProbleme.add("Agresiune verbala");
+        listaProbleme.add("Am lovit cu mașina o persoană care trecea strada neregulamentar");
         listaProbleme.add("Accident rutier");
         listaProbleme.add("Furt");
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,listaProbleme);
@@ -57,7 +58,7 @@ public class ClientActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 problemaCurenta=listaProbleme.get(position);
                 if(problemaCurenta.equals(listaProbleme.get(0))){
-                    tvDetalii.setText("Pentru aceasta situatie este nevoie de un avocat care sa ofere servicii pe drpet PENAL");
+                    tvDetalii.setText("Pentru această situatie este nevoie de un avocat specializat pe drept PENAL");
 
 
                 }else if(problemaCurenta.equals(listaProbleme.get(1))){

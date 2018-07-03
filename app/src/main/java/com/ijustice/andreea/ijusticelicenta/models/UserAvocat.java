@@ -1,6 +1,6 @@
 package com.ijustice.andreea.ijusticelicenta.models;
 
-public class User {
+public class UserAvocat {
     private String nume;
     private String prenume;
     private String email;
@@ -12,8 +12,8 @@ public class User {
     private int nr;
     private String specializare;
 
-    public User(String nume, String prenume, String email, String numarTelefon,
-                int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr,String specializare) {
+    public UserAvocat(String nume, String prenume, String email, String numarTelefon,
+                      int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr, String specializare) {
         this.nume = nume;
         this.prenume = prenume;
         this.email = email;
@@ -26,7 +26,7 @@ public class User {
         this.specializare=specializare;
     }
 
-    public User() {
+    public UserAvocat() {
     }
 
     public String getNume() {

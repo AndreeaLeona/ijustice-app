@@ -29,7 +29,7 @@ public class SignUpAvocatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_avocat);
-        getSupportActionBar().setTitle("Justice");
+        getSupportActionBar().setTitle(" ");
         init();
         ClickInregistrare();
     }

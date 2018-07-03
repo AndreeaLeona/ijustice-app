@@ -35,7 +35,7 @@ public class LogInActivity extends AppCompatActivity {
         btnLogIn=(Button)findViewById(R.id.log_in_client_btn_log);
         etEmail=(EditText)findViewById(R.id.log_in_client_et_email);
         etParola=(EditText)findViewById(R.id.log_in_client_et_parola);
-        getSupportActionBar().setTitle("Justice");
+        getSupportActionBar().setTitle(" ");
 
 
         auth=FirebaseAuth.getInstance();

@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public void init(){
         btnAvocat=(Button)findViewById(R.id.main_btn_avocat);
         btnClient=(Button)findViewById(R.id.main_btn_client);
-        getSupportActionBar().setTitle("Justice");
+        getSupportActionBar().setTitle("");
 
         btnAvocat.setOnClickListener(new View.OnClickListener() {
             @Override

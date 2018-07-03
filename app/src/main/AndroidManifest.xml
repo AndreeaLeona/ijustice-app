@@ -32,7 +32,8 @@
         <activity android:name=".LogInActivity" />
         <activity android:name=".SignUpClientActivity" />
         <activity android:name=".DespreClientActivity" />
-        <activity android:name=".ListaEmailuriAvocatiActivity"></activity>
+        <activity android:name=".ListaEmailuriAvocatiActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

@@ -1,9 +1,7 @@
 package com.ijustice.andreea.ijusticelicenta;
 
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,12 +9,10 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.ijustice.andreea.ijusticelicenta.models.User;
+import com.ijustice.andreea.ijusticelicenta.models.UserAvocat;
 
-import java.lang.annotation.Target;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,7 +72,7 @@ public class InformatiiActivity extends AppCompatActivity {
                     String strada = etStrada.getText().toString();
                     int nr = Integer.parseInt(etNr.getText().toString());
                     String specializare=etSpecializare.getText().toString();
-                    User u = new User(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
+                    UserAvocat u = new UserAvocat(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
 
                     Map informatii = new HashMap<>();
 

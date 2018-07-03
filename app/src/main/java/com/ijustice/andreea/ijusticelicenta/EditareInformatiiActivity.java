@@ -9,13 +9,12 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.ijustice.andreea.ijusticelicenta.models.User;
+import com.ijustice.andreea.ijusticelicenta.models.UserAvocat;
 
 public class EditareInformatiiActivity extends AppCompatActivity {
     EditText etNume;
@@ -71,7 +70,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                     String strada = dataSnapshot.child(userId).child("strada").getValue(String.class);
                     int nr = dataSnapshot.child(userId).child("nr").getValue(int.class);
                     String specializare=dataSnapshot.child(userId).child("specializare").getValue(String.class);
-                    User u = new User(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
+                    UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
 
 
 
@@ -91,7 +90,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                     btnSalveaza.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            User nou = new User(etNume.getText().toString(), etPrenume.getText().toString(), etEmail.getText().toString(), etNrTelefon.getText().toString(),
+                            UserAvocat nou = new UserAvocat(etNume.getText().toString(), etPrenume.getText().toString(), etEmail.getText().toString(), etNrTelefon.getText().toString(),
                                     Integer.parseInt(etCazuriRezolvate.getText().toString()), Integer.parseInt(etCazuriPierdute.getText().toString()), etOras.getText().toString(),
                                     etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()),etSpecializare.getText().toString());
                             databaseReference.child(userId).setValue(nou);

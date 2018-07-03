@@ -9,8 +9,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,7 +42,7 @@ public class ContActivity extends AppCompatActivity {
         fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.cont_main_container,new HomeFragment());
         fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle("Contul meu");
 
 
         if(auth.getCurrentUser()==null){
@@ -59,39 +57,60 @@ public class ContActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.it_info:
+                    case R.id.it_profil:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.cont_main_container,new AdaugaInformatiiFragment());
+                        fragmentTransaction.replace(R.id.cont_main_container,new AdaugaDateProfilFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Informatii");
+                        getSupportActionBar().setTitle(R.string.profil);
                         item.setChecked(true);
                         return true;
-                    case R.id.it_clienti:
+                    case R.id.it_solicitari:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.cont_main_container,new ClientiFragment());
+                        fragmentTransaction.replace(R.id.cont_main_container,new SolicitariFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Clienti");
+                        getSupportActionBar().setTitle(R.string.solicitari);
+                        item.setChecked(true);
+                        return true;
+                    case R.id.it_conversatii:
+                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.cont_main_container,new ConversatiiFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(R.string.conversatii);
                         item.setChecked(true);
                         return true;
                     case R.id.it_calendar:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new CalendarFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Calendar");
+                        getSupportActionBar().setTitle(R.string.calendar);
+                        item.setChecked(true);
+                        return true;
+                   case R.id.it_clienti:
+                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.cont_main_container,new ClientiFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(R.string.clienti);
+                        item.setChecked(true);
+                        return true;
+                   case R.id.it_cazuri:
+                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.cont_main_container,new CazuriFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle(R.string.cazuri);
                         item.setChecked(true);
                         return true;
                     case R.id.it_setari:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new SetariFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Setari");
+                        getSupportActionBar().setTitle(R.string.setari);
                         item.setChecked(true);
                         return true;
                     case R.id.it_despre:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.cont_main_container,new DespreFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Despre");
+                        getSupportActionBar().setTitle(R.string.despre);
                         item.setChecked(true);
                         return true;
 

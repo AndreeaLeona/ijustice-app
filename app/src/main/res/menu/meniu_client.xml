@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/meniu_out"
-        android:title="Log out"
+        android:title="Deconeactează-te"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/meniu_despre"
@@ -16,6 +16,6 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/meniu_chat"
-        android:title="Cere ajutorul"
+        android:title="Avocati"
         app:showAsAction="ifRoom" />
 </menu>

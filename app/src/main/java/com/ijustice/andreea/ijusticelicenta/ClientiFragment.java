@@ -7,14 +7,33 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.ijustice.andreea.ijusticelicenta.models.Client;
+
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ClientiFragment extends Fragment {
+
     Button btnAdauga;
+    ListView listView;
+    FirebaseDatabase database;
+    DatabaseReference reference;
+    static ArrayList<Client> listaClient;
+    ArrayAdapter<Client> adapter;
+    FirebaseAuth auth;
+    String userId;
+    TextView tvMesaj;
 
 
     public ClientiFragment() {

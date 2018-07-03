@@ -26,7 +26,7 @@ public class AdaugareEvenimentActivity extends AppCompatActivity {
   ListView listView;
   FirebaseDatabase database;
   DatabaseReference reference;
-   static ArrayList<NotaAvocat> lista;
+  static ArrayList<NotaAvocat> lista;
   ArrayAdapter<NotaAvocat> adapter;
   FirebaseAuth auth;
   String userId;

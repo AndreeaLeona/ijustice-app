@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/it_info" android:title="Informatii" android:icon="@drawable/ic_mode_edit_black_24dp"/>
-    <item android:id="@+id/it_clienti" android:title="Clienti" android:icon="@drawable/ic_mode_edit_black_24dp"/>
+    <item android:id="@+id/it_profil" android:title="Profil" android:icon="@drawable/ic_account_circle_black_24dp"/>
+    <item android:id="@+id/it_solicitari" android:title="Solicitări" android:icon="@drawable/ic_person_add_black_24dp"/>
+    <item android:id="@+id/it_conversatii" android:title="Conversații" android:icon="@drawable/ic_email_black_24dp"/>
     <item android:id="@+id/it_calendar" android:title="Calendar" android:icon="@drawable/ic_event_black_24dp"/>
-    <item android:id="@+id/it_setari" android:title="Setari" android:icon="@drawable/ic_settings_black_24dp"/>
+    <item android:id="@+id/it_clienti" android:title="Clienți" android:icon="@drawable/ic_group_black_24dp"/>
+    <item android:id="@+id/it_cazuri" android:title="Cazuri" android:icon="@drawable/ic_folder_black_24dp"/>
+    <item android:id="@+id/it_setari" android:title="Setări" android:icon="@drawable/ic_settings_black_24dp"/>
     <item android:id="@+id/it_despre" android:title="Despre" android:icon="@drawable/ic_info_outline_black_24dp"/>
 
-    <item android:id="@+id/it_out" android:title="Log out" android:icon="@drawable/ic_account_circle_black_24dp"/>
+    <item android:id="@+id/it_out" android:title="Deconectează-te" android:icon="@drawable/ic_account_circle_black_24dp"/>
 
 
 

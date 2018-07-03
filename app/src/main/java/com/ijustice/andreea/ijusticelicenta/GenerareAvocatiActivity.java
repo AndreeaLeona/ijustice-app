@@ -1,7 +1,6 @@
 package com.ijustice.andreea.ijusticelicenta;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -13,10 +12,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.ijustice.andreea.ijusticelicenta.models.User;
+import com.ijustice.andreea.ijusticelicenta.models.UserAvocat;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GenerareAvocatiActivity extends AppCompatActivity {
     TextView tvProblema;
@@ -24,17 +22,17 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView lvAvocati;
-    ArrayList<User> listaAvocati;
-    ArrayAdapter<User> adapter;
+    ArrayList<UserAvocat> listaAvocati;
+    ArrayAdapter<UserAvocat> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generare_avocati);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        listaAvocati=new ArrayList<User>();
+        listaAvocati=new ArrayList<UserAvocat>();
         lvAvocati=(ListView)findViewById(R.id.generare_lv_avocati);
-        adapter=new ArrayAdapter<User>(this,R.layout.adapater_listview_avocati,R.id.adapter_tv_avocati,listaAvocati);
+        adapter=new ArrayAdapter<UserAvocat>(this,R.layout.adapater_listview_avocati,R.id.adapter_tv_avocati,listaAvocati);
         databaseReference = firebaseDatabase.getReference();
         Intent intent=getIntent();
         String problema=intent.getStringExtra("problemaClient");
@@ -61,7 +59,7 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
                             String strada=ds.child("strada").getValue(String.class);
                             int nr=ds.child("nr").getValue(int.class);
                             String specializare=ds.child("specializare").getValue(String.class);
-                            User avocat=new User(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializare);
+                            UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializare);
                             listaAvocati.add(avocat);
 
                         }

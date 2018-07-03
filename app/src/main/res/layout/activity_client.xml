@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textStyle="italic"
-        android:text="Selecteaza o problema cu care te confrunti!" />
+        android:text="Selectează o problemă cu care te confrunți!" />
 
 
     <TextView

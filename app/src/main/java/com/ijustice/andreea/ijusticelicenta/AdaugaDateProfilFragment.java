@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AdaugaInformatiiFragment extends Fragment {
+public class AdaugaDateProfilFragment extends Fragment {
     Button btnAdauga;
     Button btnEdit;
     FirebaseAuth auth;
@@ -32,7 +32,7 @@ public class AdaugaInformatiiFragment extends Fragment {
     private String userId;
 
 
-    public AdaugaInformatiiFragment() {
+    public AdaugaDateProfilFragment() {
         // Required empty public constructor
     }
 
