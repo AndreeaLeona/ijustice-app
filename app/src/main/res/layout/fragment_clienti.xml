@@ -10,8 +10,19 @@
 
 
  <ListView
+     android:id="@+id/lv_vizualizare_clienti"
      android:layout_width="match_parent"
-     android:layout_height="400dp"></ListView>
+     android:layout_height="400dp">
+
+ </ListView>
+
+    <TextView
+        android:id="@+id/vizualizareclienti_mesaj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="233dp" />
 
     <Button
         android:id="@+id/clienti_btn_adauga"

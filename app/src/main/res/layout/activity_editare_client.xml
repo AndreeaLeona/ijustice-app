@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdaugaClientActivity">
-
+    tools:context=".EditareClientActivity">
     <FrameLayout
         android:layout_width="341dp"
         android:layout_height="420dp"
@@ -25,7 +24,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_nume"
+                    android:id="@+id/editeaza_client_et_nume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_face_login"
@@ -37,7 +36,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_prenume"
+                    android:id="@+id/editeaza_client_et_prenume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_face_login"
@@ -49,7 +48,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_adresa"
+                    android:id="@+id/editeaza_client_et_adresa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_place_black"
@@ -61,7 +60,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_oras"
+                    android:id="@+id/editeaza_client_et_oras"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_place_black"
@@ -73,7 +72,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_telefon"
+                    android:id="@+id/editeaza_client_et_telefon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_phone_black"
@@ -85,7 +84,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_email"
+                    android:id="@+id/editeaza_client_et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_email_black_24dp"
@@ -97,7 +96,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/adauga_client_et_precizari"
+                    android:id="@+id/editeaza_client_et_precizari"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_info_outline_black_24dp"
@@ -109,22 +108,12 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/adauga_clienti_btn_adauga"
+        android:id="@+id/editeaza_clienti_btn_salveazamodificari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="55dp"
         android:backgroundTint="@color/grenaInchis"
-        android:text="Adauga" />
-
-    <Button
-        android:id="@+id/adauga_clienti_btn_inapoi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/adauga_clienti_btn_adauga"
-        android:layout_marginTop="-55dp"
-        android:backgroundTint="@color/yellow"
-        android:text="Inapoi la contul meu" />
-
+        android:text="Salveaza modificarile" />
 
 </RelativeLayout>

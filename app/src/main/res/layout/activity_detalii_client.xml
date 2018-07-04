@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/gray"
     android:layout_height="match_parent"
-    tools:context=".AdaugaClientActivity">
+    tools:context=".DetaliiClientActivity">
 
     <FrameLayout
         android:layout_width="341dp"
-        android:layout_height="420dp"
+        android:layout_height="211dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="91dp"
         tools:layout_editor_absoluteX="22dp"
         tools:layout_editor_absoluteY="38dp">
 
@@ -24,10 +25,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_nume"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_nume"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_face_login"
                     android:hint="Nume" />
             </android.support.design.widget.TextInputLayout>
@@ -36,10 +37,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_prenume"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_prenume"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_face_login"
                     android:hint="Prenume" />
             </android.support.design.widget.TextInputLayout>
@@ -48,10 +49,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_adresa"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_adresa"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_place_black"
                     android:hint="Adresa" />
             </android.support.design.widget.TextInputLayout>
@@ -60,10 +61,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_oras"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_oras"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_place_black"
                     android:hint="Oras" />
             </android.support.design.widget.TextInputLayout>
@@ -72,10 +73,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_telefon"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_telefon"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_phone_black"
                     android:hint="Numar de telefon" />
             </android.support.design.widget.TextInputLayout>
@@ -84,10 +85,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_email"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_email_black_24dp"
                     android:hint="Adresa de email" />
             </android.support.design.widget.TextInputLayout>
@@ -96,10 +97,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/adauga_client_et_precizari"
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_precizari"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:drawableLeft="@drawable/ic_info_outline_black_24dp"
                     android:hint="Precizari" />
             </android.support.design.widget.TextInputLayout>
@@ -108,23 +109,22 @@
 
     </FrameLayout>
 
-    <Button
-        android:id="@+id/adauga_clienti_btn_adauga"
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/imageBtnEdit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="55dp"
-        android:backgroundTint="@color/grenaInchis"
-        android:text="Adauga" />
+        android:layout_toLeftOf="@id/imageBtnEdit"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/ic_edit_items" />
 
-    <Button
-        android:id="@+id/adauga_clienti_btn_inapoi"
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/imageBtnDelete"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/adauga_clienti_btn_adauga"
-        android:layout_marginTop="-55dp"
-        android:backgroundTint="@color/yellow"
-        android:text="Inapoi la contul meu" />
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageBtnEdit"
+        app:srcCompat="@drawable/ic_delete"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </RelativeLayout>

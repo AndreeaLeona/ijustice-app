@@ -1,5 +1,7 @@
 package com.ijustice.andreea.ijusticelicenta.models;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Client {
     private String nume;
     private String prenume;
@@ -8,6 +10,8 @@ public class Client {
     private String nrTelefon;
     private String adresaEmail;
     private String precizari;
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private int id;
 
     public Client(String nume, String prenume, String adresa, String oras, String nrTelefon, String adresaEmail, String precizari) {
         this.nume = nume;
@@ -17,6 +21,11 @@ public class Client {
         this.nrTelefon = nrTelefon;
         this.adresaEmail = adresaEmail;
         this.precizari = precizari;
+        this.id=count.incrementAndGet();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Client() {
