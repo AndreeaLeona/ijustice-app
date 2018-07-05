@@ -50,7 +50,6 @@ public class AdaugaClientActivity extends AppCompatActivity {
         etPrecizari=(EditText)findViewById(R.id.adauga_client_et_precizari);
 
         btnSalveaza=(Button) findViewById(R.id.adauga_clienti_btn_adauga);
-        btnInapoi=(Button) findViewById(R.id.adauga_clienti_btn_inapoi);
         auth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference();
@@ -82,12 +81,7 @@ public class AdaugaClientActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
             }
         });
-        btnInapoi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),ContActivity.class));
-            }
-        });
+
 
     }
 }

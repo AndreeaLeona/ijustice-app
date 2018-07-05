@@ -29,6 +29,7 @@
                     android:id="@+id/vizualizeaza_client_et_nume"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_face_login"
                     android:hint="Nume" />
             </android.support.design.widget.TextInputLayout>
@@ -41,6 +42,7 @@
                     android:id="@+id/vizualizeaza_client_et_prenume"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_face_login"
                     android:hint="Prenume" />
             </android.support.design.widget.TextInputLayout>
@@ -53,6 +55,7 @@
                     android:id="@+id/vizualizeaza_client_et_adresa"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_place_black"
                     android:hint="Adresa" />
             </android.support.design.widget.TextInputLayout>
@@ -65,6 +68,7 @@
                     android:id="@+id/vizualizeaza_client_et_oras"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_place_black"
                     android:hint="Oras" />
             </android.support.design.widget.TextInputLayout>
@@ -77,6 +81,7 @@
                     android:id="@+id/vizualizeaza_client_et_telefon"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_phone_black"
                     android:hint="Numar de telefon" />
             </android.support.design.widget.TextInputLayout>
@@ -89,6 +94,7 @@
                     android:id="@+id/vizualizeaza_client_et_email"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_email_black_24dp"
                     android:hint="Adresa de email" />
             </android.support.design.widget.TextInputLayout>
@@ -101,6 +107,7 @@
                     android:id="@+id/vizualizeaza_client_et_precizari"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="20dp"
                     android:drawableLeft="@drawable/ic_info_outline_black_24dp"
                     android:hint="Precizari" />
             </android.support.design.widget.TextInputLayout>

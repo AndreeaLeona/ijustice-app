@@ -35,7 +35,10 @@
         <activity android:name=".ListaEmailuriAvocatiActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".DetaliiClientActivity" />
-        <activity android:name=".EditareClientActivity"></activity>
+        <activity android:name=".EditareClientActivity" />
+        <activity android:name=".AdaugaCazActivity" />
+        <activity android:name=".DetaliiCazActivity" />
+        <activity android:name=".EditareCazActivity"></activity>
     </application>
 
 </manifest>

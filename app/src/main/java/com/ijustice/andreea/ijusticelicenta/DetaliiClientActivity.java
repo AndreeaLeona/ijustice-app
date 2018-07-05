@@ -1,6 +1,11 @@
 package com.ijustice.andreea.ijusticelicenta;
 
+import android.annotation.SuppressLint;
+import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +13,22 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class DetaliiClientActivity extends AppCompatActivity {
     TextView tvNume,tvPrenume,tvAdresa, tvOras,tvTelefon, tvEmail,tvPrecizari;
     ImageButton imgBtnEditare;
     ImageButton imgBtnStergere;
+    FirebaseAuth auth;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    private String userId;
 
 
 
@@ -19,6 +36,10 @@ public class DetaliiClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalii_client);
+        auth=FirebaseAuth.getInstance();
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        FirebaseUser user=auth.getCurrentUser();
+        userId=user.getUid();
         tvNume=(TextView)findViewById(R.id.vizualizeaza_client_et_nume);
         imgBtnEditare=(ImageButton)findViewById(R.id.imageBtnEdit) ;
         imgBtnStergere=(ImageButton)findViewById(R.id.imageBtnDelete);
@@ -31,6 +52,7 @@ public class DetaliiClientActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
              final int id=intent.getIntExtra("id",-1);
+             databaseReference=firebaseDatabase.getReference("clienti").child(userId).child(String.valueOf(id));
              final String  nume = intent.getStringExtra("Nume");
              final String prenume = intent.getStringExtra("Prenume");
              final String adresa = intent.getStringExtra("Adresa");
@@ -60,11 +82,48 @@ public class DetaliiClientActivity extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+            imgBtnStergere.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog diaBox = AskOption();
+                    diaBox.show();
+                }
+            });
+
 
         }
 
 
+    }
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
+                //set message, title, and icon
+                .setTitle("Ștergere")
+                .setMessage("Ești sigur că vrei să ștergi acest client?")
+                .setIcon(R.drawable.ic_delete)
 
+                .setPositiveButton("Șterge", new DialogInterface.OnClickListener() {
+
+                    @SuppressLint("ResourceType")
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        databaseReference.removeValue();
+                        dialog.dismiss();
+
+
+                    }
+
+                })
+
+                .setNegativeButton("Anulează", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
 
     }
 

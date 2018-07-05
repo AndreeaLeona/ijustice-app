@@ -35,7 +35,7 @@ public class ClientiFragment extends Fragment {
     ListView listView;
     FirebaseDatabase database;
     DatabaseReference reference;
-    List<Client> listaClienti =new ArrayList<>();
+    List<Client> listaClienti;
     ClientiAdapter adapter;
     FirebaseAuth auth;
     String userId;
@@ -56,6 +56,7 @@ public class ClientiFragment extends Fragment {
         btnAdauga=v.findViewById(R.id.clienti_btn_adauga);
         tvMesaj=v.findViewById(R.id.vizualizareclienti_mesaj);
         listView=v.findViewById(R.id.lv_vizualizare_clienti);
+        listaClienti =new ArrayList<>();
 
         database=FirebaseDatabase.getInstance();
         auth=FirebaseAuth.getInstance();
@@ -64,9 +65,12 @@ public class ClientiFragment extends Fragment {
         reference=database.getReference("clienti").child(userId);
 
 
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                listaClienti.clear();
+                listView.setAdapter(null);
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
                     String nume = ds.child("nume").getValue(String.class);
                     String prenume = ds.child("prenume").getValue(String.class);
@@ -106,7 +110,7 @@ public class ClientiFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(),AdaugaClientActivity.class);
                 startActivity(intent);
-                getActivity().finish();
+               // getActivity().finish();
 
             }
         });
@@ -124,6 +128,7 @@ public class ClientiFragment extends Fragment {
                 intent.putExtra("Email",client.getAdresaEmail());
                 intent.putExtra("Precizari",client.getPrecizari());
                 startActivity(intent);
+               // getActivity().finish();
             }
         });
 

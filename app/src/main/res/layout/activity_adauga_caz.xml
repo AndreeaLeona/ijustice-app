@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdaugaCazActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/adauga_caz_et_obiect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nume" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/adauga_caz_et_numar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prenume" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/adauga_caz_et_nume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Adresa" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/adauga_caz_et_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Oras" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/adauga_caz_et_descriere"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numar de telefon" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/adauga_caz_btn_adauga"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/grenaInchis"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="97dp"
+        android:text="Adaugă caz" />
+
+</RelativeLayout>

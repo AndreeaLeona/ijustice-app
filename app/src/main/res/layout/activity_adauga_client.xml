@@ -111,20 +111,12 @@
     <Button
         android:id="@+id/adauga_clienti_btn_adauga"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="55dp"
         android:backgroundTint="@color/grenaInchis"
         android:text="Adauga" />
 
-    <Button
-        android:id="@+id/adauga_clienti_btn_inapoi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/adauga_clienti_btn_adauga"
-        android:layout_marginTop="-55dp"
-        android:backgroundTint="@color/yellow"
-        android:text="Inapoi la contul meu" />
 
 
 </RelativeLayout>

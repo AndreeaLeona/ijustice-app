@@ -3,23 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/img_clienti"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/clienticon"/>
+        android:id="@+id/img_caz"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:src="@drawable/cazicon"/>
     <TextView
-        android:id="@+id/item_lv_clienti_texview_nume"
+        android:id="@+id/item_lv_caz_texview_obiect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_clienti"
+        android:layout_toRightOf="@id/img_caz"
         android:layout_margin="10dp"
         android:textSize="20sp"
         android:textStyle="bold"/>
     <TextView
-        android:id="@+id/item_lv_clienti_texview_oras"
+        android:id="@+id/item_lv_caz_texview_nume_solicitant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_clienti"
+        android:layout_toRightOf="@id/img_caz"
         android:layout_below="@id/item_lv_clienti_texview_nume"
         android:layout_margin="10dp"
         android:textSize="20sp"

@@ -49,7 +49,7 @@ public class EditareClientActivity extends AppCompatActivity {
 
         if (intent.getExtras() != null) {
 
-             int id=intent.getIntExtra("id",-1);
+            final int id=intent.getIntExtra("id",-1);
             databaseReference = firebaseDatabase.getReference("clienti").child(userId).child(String.valueOf(id));
 
             String  nume = intent.getStringExtra("nume");
@@ -67,25 +67,27 @@ public class EditareClientActivity extends AppCompatActivity {
             etEmail.setText(email.toString());
             etPrecizari.setText(precizari.toString());
 
+            btnAlveaza.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Client c = new Client(etNume.getText().toString(), etPrenume.getText().toString(),etAdresa.getText().toString(),
+                            etOras.getText().toString(), etTelefon.getText().toString(),etEmail.getText().toString(),etPrecizari.getText().toString());
+                    Map client = new HashMap<>();
+                    client.put("nume",c.getNume());
+                    client.put("prenume",c.getPrenume());
+                    client.put("adresa",c.getAdresa());
+                    client.put("oras",c.getOras());
+                    client.put("telefon",c.getNrTelefon());
+                    client.put("email",c.getAdresaEmail());
+                    client.put("precizari",c.getPrecizari());
+                    databaseReference.setValue(client);
+                    Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
-        btnAlveaza.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Client c = new Client(etNume.getText().toString(), etPrenume.getText().toString(),etAdresa.getText().toString(),
-                        etOras.getText().toString(), etTelefon.getText().toString(),etEmail.getText().toString(),etPrecizari.getText().toString());
-                Map client = new HashMap<>();
-                client.put("nume",c.getNume());
-                client.put("prenume",c.getPrenume());
-                client.put("adresa",c.getAdresa());
-                client.put("oras",c.getOras());
-                client.put("telefon",c.getNrTelefon());
-                client.put("email",c.getAdresaEmail());
-                client.put("precizari",c.getPrecizari());
-                databaseReference.setValue(client);
-                Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
 
     }
