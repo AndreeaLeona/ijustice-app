@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/img_caz"
-        android:layout_below="@id/item_lv_clienti_texview_nume"
+        android:layout_below="@id/item_lv_caz_texview_obiect"
         android:layout_margin="10dp"
         android:textSize="20sp"
         android:textStyle="bold"/>

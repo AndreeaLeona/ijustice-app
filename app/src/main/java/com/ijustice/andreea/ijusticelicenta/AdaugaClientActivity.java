@@ -26,7 +26,6 @@ public class AdaugaClientActivity extends AppCompatActivity {
     EditText etNume;
     EditText etPrenume;
     EditText etAdresa;
-    Button btnInapoi;
     EditText etOras;
     EditText etTelefon;
     EditText etEmail;

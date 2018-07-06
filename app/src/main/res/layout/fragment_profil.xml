@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfilFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:src="@color/grenaInchis" />
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:id="@+id/circleimg_profil"
+        android:layout_alignParentTop="true"
+        android:background="@color/gray"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/profileicon" />
+    <ImageButton
+        android:id="@+id/img_btn_profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/circleimg_profil"
+        android:layout_alignBottom="@id/circleimg_profil"
+        android:src="@drawable/ic_edit_items"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/tv-profil_nume"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_prenume"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_email"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_telefon"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+
+                android:id="@+id/tv_profil_rezolvate"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_pierdute"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_specializare"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_oras"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_strada"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_profil_nrcasa"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

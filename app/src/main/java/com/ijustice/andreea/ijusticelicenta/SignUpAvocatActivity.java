@@ -66,7 +66,7 @@ public class SignUpAvocatActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                         finish();
-                        startActivity(new Intent(getApplicationContext(),ContActivity.class));
+                        startActivity(new Intent(getApplicationContext(),InformatiiActivity.class));
                 }else{
                     Toast.makeText(SignUpAvocatActivity.this, R.string.inregistrare_nereusita,Toast.LENGTH_SHORT).show();
 

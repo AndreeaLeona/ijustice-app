@@ -1,5 +1,6 @@
 package com.ijustice.andreea.ijusticelicenta;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -90,6 +91,7 @@ public class InformatiiActivity extends AppCompatActivity {
 
                         databaseReference.child("users").child(userId).setValue(informatii);
                         Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),ContActivity.class));
 
                     } catch (Exception ex) {
                         Toast.makeText(getApplicationContext(), "Datele tale nu au fost salvate, te rog sa verifici conexiunea la internet", Toast.LENGTH_SHORT).show();

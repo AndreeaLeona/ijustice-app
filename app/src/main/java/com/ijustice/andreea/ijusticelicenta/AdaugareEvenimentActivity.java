@@ -63,6 +63,8 @@ public class AdaugareEvenimentActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                lista.clear();
+                listView.setAdapter(null);
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
                     String titlu = ds.child("titlu").getValue(String.class);
                     String data = ds.child("data").getValue(String.class);

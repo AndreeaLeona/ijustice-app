@@ -1,5 +1,6 @@
 package com.ijustice.andreea.ijusticelicenta;
 
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.ijustice.andreea.ijusticelicenta.models.Caz;
 import com.ijustice.andreea.ijusticelicenta.models.Client;
+import com.ijustice.andreea.ijusticelicenta.models.DateDialog;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,12 +35,23 @@ public class AdaugaCazActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adauga_client);
+        setContentView(R.layout.activity_adauga_caz);
         etNume = (EditText) findViewById(R.id.adauga_caz_et_nume);
         etObiect = (EditText) findViewById(R.id.adauga_caz_et_obiect);
         etNumar = (EditText) findViewById(R.id.adauga_caz_et_numar);
         etData = (EditText) findViewById(R.id.adauga_caz_et_data);
         etDescriere = (EditText) findViewById(R.id.adauga_caz_et_descriere);
+
+        etData.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    DateDialog dialog=new DateDialog(v);
+                    FragmentTransaction transaction=getFragmentManager().beginTransaction();
+                    dialog.show(transaction,"Date Picker");
+                }
+            }
+        });
 
 
         btnAdauga = (Button) findViewById(R.id.adauga_caz_btn_adauga);
@@ -61,7 +74,7 @@ public class AdaugaCazActivity extends AppCompatActivity {
                 Map caz = new HashMap<>();
                 caz.put("obiect", c.getObiect());
                 caz.put("numar", c.getNrOrdine());
-                caz.put("nume", c.getNumeSolicitant());
+                caz.put("numeSolicitant", c.getNumeSolicitant());
                 caz.put("data", c.getData());
                 caz.put("descriere", c.getDescriere());
 

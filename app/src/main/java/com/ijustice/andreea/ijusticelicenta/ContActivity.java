@@ -59,7 +59,7 @@ public class ContActivity extends AppCompatActivity {
                 switch(item.getItemId()){
                     case R.id.it_profil:
                         fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.cont_main_container,new AdaugaDateProfilFragment());
+                        fragmentTransaction.replace(R.id.cont_main_container,new ProfilFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle(R.string.profil);
                         item.setChecked(true);

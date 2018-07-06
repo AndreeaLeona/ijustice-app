@@ -33,7 +33,7 @@ public class CazuriAdapter extends ArrayAdapter<Caz> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItem = convertView;
         if(listItem == null)
-            listItem = LayoutInflater.from(ccontext).inflate(R.layout.custom_clienti_item,parent,false);
+            listItem = LayoutInflater.from(ccontext).inflate(R.layout.custom_cazuri_item,parent,false);
 
         Caz cazCurent = cazuri.get(position);
 

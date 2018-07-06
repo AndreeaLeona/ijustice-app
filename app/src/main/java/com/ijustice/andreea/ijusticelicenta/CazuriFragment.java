@@ -1,7 +1,6 @@
 package com.ijustice.andreea.ijusticelicenta;
 
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,8 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ijustice.andreea.ijusticelicenta.models.Caz;
 import com.ijustice.andreea.ijusticelicenta.models.CazuriAdapter;
-import com.ijustice.andreea.ijusticelicenta.models.Client;
-import com.ijustice.andreea.ijusticelicenta.models.ClientiAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +30,11 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class CazuriFragment extends Fragment {
-
-    Button btnAdauga;
+    Button btnAdaugaCaz;
     ListView listView;
     FirebaseDatabase database;
     DatabaseReference reference;
-    List<Caz> listaCazuri =new ArrayList<>();
+    List<Caz> listaCazuri;
     CazuriAdapter adapter;
     FirebaseAuth auth;
     String userId;
@@ -54,11 +50,13 @@ public class CazuriFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_cazuri, container, false);
+        View v= inflater.inflate(R.layout.fragment_cazuri2, container, false);
 
-        btnAdauga=v.findViewById(R.id.cazuri_btn_adauga);
+
+        btnAdaugaCaz=v.findViewById(R.id.cazuri_btn_adauga);
         tvMesaj=v.findViewById(R.id.vizualizarecazuri_mesaj);
         listView=v.findViewById(R.id.lv_vizualizare_cazuri);
+        listaCazuri =new ArrayList<>();
         database=FirebaseDatabase.getInstance();
         auth=FirebaseAuth.getInstance();
         FirebaseUser user=auth.getCurrentUser();
@@ -69,6 +67,8 @@ public class CazuriFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                listaCazuri.clear();
+                listView.setAdapter(null);
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
                     String obiect = ds.child("obiect").getValue(String.class);
                     int numar = ds.child("numar").getValue(int.class);
@@ -101,27 +101,28 @@ public class CazuriFragment extends Fragment {
 
             }
         });
+        btnAdaugaCaz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent=new Intent(getContext(),AdaugaCazActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Caz caz=adapter.getItem(position);
-                Intent intent=new Intent(getActivity(),DetaliiClientActivity.class);
+                Intent intent=new Intent(getActivity(),DetaliiCazActivity.class);
                 intent.putExtra("id",caz.getId());
                 intent.putExtra("obiect", caz.getObiect());
+                intent.putExtra("numar",caz.getNrOrdine());
                 intent.putExtra("numeSolicitant",caz.getNumeSolicitant());
                 intent.putExtra("data",caz.getData());
                 intent.putExtra("descriere",caz.getDescriere());
 
                 startActivity(intent);
-                getActivity().finish();
-            }
-        });
-        btnAdauga.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(),AdaugaCazActivity.class));
             }
         });
 

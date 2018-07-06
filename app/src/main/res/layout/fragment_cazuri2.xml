@@ -10,8 +10,16 @@
         android:id="@+id/lv_vizualizare_cazuri"
         android:layout_width="match_parent"
         android:layout_height="400dp">
-
     </ListView>
+    <Button
+        android:id="@+id/cazuri_btn_adauga"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:backgroundTint="@color/grenaInchis"
+        android:text="Adauga caz" />
 
     <TextView
         android:id="@+id/vizualizarecazuri_mesaj"
@@ -20,17 +28,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="233dp" />
-
-    <Button
-        android:id="@+id/cazuri_btn_adauga"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/grenaInchis"
-        android:text="Adauga caz" />
 
 
 </RelativeLayout>
