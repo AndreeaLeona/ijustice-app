@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SchimbaParolaActivity">
+
+    <TextView
+        android:id="@+id/tv_indicatieparola"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-69dp"
+        android:text="Introdu noua parolă:"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="69dp">
+
+        <EditText
+            android:id="@+id/et_parola_schimba"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Parolă" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/schimba_btn_schimba_"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/grenaInchis"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="177dp"
+        android:text="Schimbă" />
+
+</RelativeLayout>

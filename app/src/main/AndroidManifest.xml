@@ -38,7 +38,8 @@
         <activity android:name=".EditareClientActivity" />
         <activity android:name=".AdaugaCazActivity" />
         <activity android:name=".DetaliiCazActivity" />
-        <activity android:name=".EditareCazActivity"></activity>
+        <activity android:name=".EditareCazActivity" />
+        <activity android:name=".SchimbaParolaActivity"></activity>
     </application>
 
 </manifest>
