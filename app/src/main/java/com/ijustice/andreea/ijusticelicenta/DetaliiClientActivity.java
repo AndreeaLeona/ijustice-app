@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -109,6 +110,8 @@ public class DetaliiClientActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         databaseReference.removeValue();
                         dialog.dismiss();
+                        Toast.makeText(getApplicationContext(),"Clientul a fost șters",Toast.LENGTH_SHORT).show();
+
 
 
                     }
@@ -119,6 +122,8 @@ public class DetaliiClientActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         dialog.dismiss();
+                        Toast.makeText(getApplicationContext(),"Ștergerea a fost anulată",Toast.LENGTH_SHORT).show();
+
 
                     }
                 })
