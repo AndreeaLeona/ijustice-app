@@ -49,6 +49,7 @@ public class ContActivity extends AppCompatActivity {
            finish();
            startActivity(new Intent(getApplicationContext(),LogInAvocatActivity.class));
 
+
         }
 
 
