@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/gray"
     android:layout_height="match_parent"
     tools:context=".DetaliiClientActivity">
 
     <FrameLayout
         android:layout_width="341dp"
-        android:layout_height="211dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="356dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp"
+        android:layout_marginBottom="30dp"
         tools:layout_editor_absoluteX="22dp"
         tools:layout_editor_absoluteY="38dp">
 
@@ -21,96 +20,178 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_nume"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_face_login"
-                    android:hint="Nume" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_nume_hint"
+                    android:textSize="20dp" />
 
-            <android.support.design.widget.TextInputLayout
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_nume_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Nume: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">>
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_prenume"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_face_login"
-                    android:hint="Prenume" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_prenume_hint"
+                    android:textSize="20dp" />
 
-            <android.support.design.widget.TextInputLayout
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_prenume_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Prenume: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">>
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_adresa"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_place_black"
-                    android:hint="Adresa" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_adresa_hint"
+                    android:textSize="20dp" />
 
-            <android.support.design.widget.TextInputLayout
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_adresa_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Adresă: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">>
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_oras"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_place_black"
-                    android:hint="Oras" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_oras_hint"
+                    android:textSize="20dp" />
 
-            <android.support.design.widget.TextInputLayout
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_oras_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Oraș: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">>
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_telefon"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_phone_black"
-                    android:hint="Numar de telefon" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_telefon_hint"
+                    android:textSize="20dp" />
 
-            <android.support.design.widget.TextInputLayout
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_telefon_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Număr de telefon: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
+                >
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_email"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_email_black_24dp"
-                    android:hint="Adresa de email" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_email_hint"
+                    android:textSize="20dp" />
 
-            <android.support.design.widget.TextInputLayout
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_email_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Adresă de email: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:padding="10dp">>
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_precizari"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
+                    android:layout_toRightOf="@id/vizualizeaza_client_et_precizari_hint"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/vizualizeaza_client_et_precizari_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Precizări: "
                     android:textSize="20dp"
-                    android:drawableLeft="@drawable/ic_info_outline_black_24dp"
-                    android:hint="Precizari" />
-            </android.support.design.widget.TextInputLayout>
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
         </LinearLayout>
 
 
@@ -118,20 +199,33 @@
 
     <ImageButton
         android:id="@+id/imageBtnEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/imageBtnEdit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="82dp"
+        android:background="@null"
         app:srcCompat="@drawable/ic_edit_items" />
 
     <ImageButton
         android:id="@+id/imageBtnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageBtnEdit"
+        android:layout_marginEnd="14dp"
+        android:background="@null"
         app:srcCompat="@drawable/ic_delete"
         tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@drawable/clienticon" />
 
 
 </RelativeLayout>

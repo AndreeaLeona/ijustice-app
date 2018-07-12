@@ -7,87 +7,164 @@
     tools:context=".DetaliiCazActivity">
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="84dp">
+        android:layout_width="341dp"
+        android:layout_height="251dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="38dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="332dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/tv_obiect"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/tv_numar"
-                android:layout_marginTop="22dp"
-                android:text="TextView"
-                android:textSize="20dp" />
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tv_numar"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_obiect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/tv_obiect_hint"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_obiect_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Obiect: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/tv_nume"
-                android:layout_marginTop="80dp"
-                android:text="TextView"
-                android:textSize="20dp" />
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tv_nume"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_numar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/tv_numar_hint"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_numar_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Număr de ordine: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="135dp"
-                android:text="TextView"
-                android:textSize="20dp" />
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tv_data"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_nume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/tv_nume_hint"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_nume_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Nume solicitant/client: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/tv_obiect"
-                android:layout_marginBottom="118dp"
-                android:text="TextView"
-                android:textSize="20dp" />
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tv_descriere"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/tv_data_hint"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_data_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Data: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/tv_obiect"
-                android:layout_marginBottom="65dp"
-                android:text="TextView"
-                android:textSize="20dp" />
+                android:background="@drawable/textview_style"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_descriere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/tv_descriere_hint"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_descriere_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Descriere: "
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
 
-        </RelativeLayout>
-        </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
     <ImageButton
         android:id="@+id/imageBtnEditCaz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_toLeftOf="@id/imageBtnDelete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="62dp"
+        android:background="@null"
         app:srcCompat="@drawable/ic_edit_items" />
 
     <ImageButton
         android:id="@+id/imageBtnDeleteCaz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_toRightOf="@id/imageBtnEditCaz"
-        android:background="@color/white"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
         app:srcCompat="@drawable/ic_delete"
         tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp"
+        app:srcCompat="@drawable/cazicon" />
 
 </RelativeLayout>
