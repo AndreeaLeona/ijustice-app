@@ -8,23 +8,21 @@
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="180dp"
         android:layout_alignParentTop="true"
         android:src="@color/grenaInchis" />
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="130dp"
         android:id="@+id/circleimg_profil"
-        android:layout_alignParentTop="true"
-        android:background="@color/gray"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:src="@drawable/profileicon" />
+        android:src="@drawable/profilepicture" />
     <ImageButton
         android:id="@+id/img_btn_profil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
         android:layout_toRightOf="@id/circleimg_profil"
         android:layout_alignBottom="@id/circleimg_profil"
         android:src="@drawable/ic_edit_items"/>
@@ -33,226 +31,239 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp">
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="200dp">
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/tv-profil_nume"
                     android:layout_width="wrap_content"
-                    android:textSize="15dp"
-                    android:text="text"
+                    android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/tv_profil_nume_hint"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:text="text"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tv_profil_nume_hint"
                     android:layout_width="wrap_content"
-                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
                     android:text="Nume: "
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_profil_prenume"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:layout_toRightOf="@id/tv_profil_prenume_hint"
-        android:textSize="15dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_profil_prenume_hint"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:text="Prenume: "
-        android:textSize="15dp"
-        android:layout_height="wrap_content" />
-
-</RelativeLayout>
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_profil_email"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:layout_toRightOf="@id/tv_profil_email_hint"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_profil_email_hint"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:text="Email: "
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
-
-</RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_profil_prenume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_prenume_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profil_prenume_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prenume: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_profil_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_email_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profil_email_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/tv_profil_telefon"
                     android:layout_width="wrap_content"
-                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/tv_profil_telefon_hint"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_profil_telefon_hint"
                     android:layout_width="wrap_content"
-                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
                     android:text="Telefon: "
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content" />
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
 
 
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-               <TextView
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                   android:id="@+id/tv_profil_rezolvate"
-                   android:layout_width="wrap_content"
-                   android:textSize="15dp"
-                   android:layout_toRightOf="@id/tv_profil_rezolvate_hint"
-                   android:textStyle="bold"
-                   android:layout_height="wrap_content" />
+                <TextView
 
-               <TextView
+                    android:id="@+id/tv_profil_rezolvate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_rezolvate_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-                   android:id="@+id/tv_profil_rezolvate_hint"
-                   android:layout_width="wrap_content"
-                   android:textSize="15dp"
-                   android:text="Număr cazuri rezolvate: "
-                   android:textStyle="bold"
-                   android:layout_height="wrap_content" />
+                <TextView
 
-
-           </RelativeLayout>
+                    android:id="@+id/tv_profil_rezolvate_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Număr cazuri rezolvate: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/tv_profil_pierdute"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:layout_toRightOf="@id/tv_profil_pierdute_hint"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_profil_pierdute_hint"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:text="Număr cazuri pierdute: "
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
-
-</RelativeLayout>
-     <RelativeLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content">
-
-         <TextView
-             android:id="@+id/tv_profil_specializare"
-             android:layout_width="wrap_content"
-             android:textSize="15dp"
-             android:layout_toRightOf="@id/tv_profil_specializare_hint"
-             android:textStyle="bold"
-             android:layout_height="wrap_content" />
-
-         <TextView
-             android:id="@+id/tv_profil_specializare_hint"
-             android:layout_width="wrap_content"
-             android:textSize="15dp"
-             android:textStyle="bold"
-             android:text="Specializare: "
-             android:layout_height="wrap_content" />
-     </RelativeLayout>
+            </RelativeLayout>
 
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-      <TextView
-          android:id="@+id/tv_profil_oras"
-          android:layout_width="wrap_content"
-          android:textSize="15dp"
-          android:textStyle="bold"
-          android:layout_toRightOf="@id/tv_profil_oras_hint"
-          android:layout_height="wrap_content" />
-      <TextView
-          android:id="@+id/tv_profil_oras_hint"
-          android:layout_width="wrap_content"
-          android:textSize="15dp"
-          android:textStyle="bold"
-          android:text="Oraș: "
-          android:layout_height="wrap_content" />
-  </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_profil_pierdute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_pierdute_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_profil_strada"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:layout_toRightOf="@id/tv_profil_strada_hint"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_profil_pierdute_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Număr cazuri pierdute: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_profil_strada_hint"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:text="Stradă: "
-        android:layout_height="wrap_content" />
+            </RelativeLayout>
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_profil_nrcasa"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:layout_toRightOf="@id/tv_profil_nrcasa_hint"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/tv_profil_nrcasa_hint"
-        android:layout_width="wrap_content"
-        android:textSize="15dp"
-        android:text="Număr casă/bloc: "
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_profil_specializare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_specializare_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_profil_specializare_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Specializare: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_profil_oras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_oras_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profil_oras_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oraș: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_profil_strada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_strada_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profil_strada_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stradă: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_profil_nrcasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_profil_nrcasa_hint"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profil_nrcasa_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Număr casă/bloc: "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
 
         </LinearLayout>

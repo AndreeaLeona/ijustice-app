@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="238dp"
+        android:layout_height="228dp"
         android:layout_alignParentTop="true"
         app:srcCompat="@drawable/solutions"
         tools:layout_editor_absoluteX="176dp"
@@ -21,15 +21,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="198dp" />
+        android:layout_marginBottom="178dp"
+        android:padding="10dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true" />
 
     <TextView
         android:id="@+id/client_tv_mesaj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textStyle="italic"
-        android:text="Selectează o problemă cu care te confrunți!" />
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:text="Selectează o problemă cu care te confrunți!"
+        android:textSize="15dp"
+        android:textStyle="italic" />
 
 
     <TextView
@@ -38,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="85dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -47,12 +51,12 @@
     <Button
         android:id="@+id/client_btn_gaseste_avocat"
         android:layout_width="match_parent"
-        android:text="Gaseste avocat"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/grenaInchis"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/grenaInchis"
+        android:text="Gaseste avocat" />
 
 </RelativeLayout>

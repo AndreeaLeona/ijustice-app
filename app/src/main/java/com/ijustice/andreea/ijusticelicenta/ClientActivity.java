@@ -14,6 +14,14 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.ijustice.andreea.ijusticelicenta.models.CustomAdapterSpinner;
+import com.ijustice.andreea.ijusticelicenta.models.Situatie;
 
 import org.w3c.dom.Text;
 
@@ -21,12 +29,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientActivity extends AppCompatActivity {
-    Spinner probleme;
+    Spinner spinner;
     TextView tvDetalii;
     private FirebaseAuth auth;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
-    static List<String> listaProbleme;
-    String problemaCurenta;
+    ArrayList<Situatie> listaProbleme;
+    CustomAdapterSpinner adapter;
+    Situatie problemaCurenta;
     Button btnGaseste;
 
 
@@ -34,39 +45,60 @@ public class ClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
-        probleme=(Spinner)findViewById(R.id.client_spinner);
+
+        spinner=(Spinner)findViewById(R.id.client_spinner);
         btnGaseste=(Button)findViewById(R.id.client_btn_gaseste_avocat);
         tvDetalii=(TextView)findViewById(R.id.client_tv_detalii_problema);
         auth=FirebaseAuth.getInstance();
         getSupportActionBar().setTitle("");
+
         FirebaseUser user=auth.getCurrentUser();
         if(auth.getCurrentUser()==null){
             finish();
             startActivity(new Intent(getApplicationContext(),LogInActivity.class));
 
         }
-        getSupportActionBar().setTitle("");
-         listaProbleme=new ArrayList<String>();
-        listaProbleme.add("Am lovit cu mașina o persoană care trecea strada neregulamentar");
-        listaProbleme.add("Accident rutier");
-        listaProbleme.add("Furt");
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,listaProbleme);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        probleme.setAdapter(adapter);
-        probleme.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         firebaseDatabase = FirebaseDatabase.getInstance();
+         databaseReference = firebaseDatabase.getReference("situatii");
+         getSupportActionBar().setTitle("");
+         listaProbleme=new ArrayList<Situatie>();
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    String situatie=ds.child("situatie").getValue(String.class);
+                    String solutie=ds.child("solutie").getValue(String.class);
+                    String specializare=ds.child("specializare").getValue(String.class);
+                    Situatie situatie1=new Situatie(situatie,solutie,specializare);
+                    listaProbleme.add(situatie1);
+
+              }
+                adapter=new CustomAdapterSpinner(getApplicationContext(),listaProbleme);
+                spinner.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 problemaCurenta=listaProbleme.get(position);
-                if(problemaCurenta.equals(listaProbleme.get(0))){
-                    tvDetalii.setText("Pentru această situatie este nevoie de un avocat specializat pe drept PENAL");
+                if(problemaCurenta.getSpecializare().equals("penal")){
+                    tvDetalii.setText(problemaCurenta.getSolutie().toString());
 
 
-                }else if(problemaCurenta.equals(listaProbleme.get(1))){
-                    tvDetalii.setText("Pentru aceasta situatie este nevoie de un avocat care sa ofere servicii pe drpet CIVIL");
+                }else if(problemaCurenta.getSpecializare().equals("comercial")){
+                    tvDetalii.setText(problemaCurenta.getSolutie().toString());
 
-                }else{
-                    tvDetalii.setText("Pentru aceasta situatie este nevoie de un avocat care sa ofere servicii pe drpet PENAL");
-
+                }else if(problemaCurenta.getSpecializare().equals("administrativ")){
+                    tvDetalii.setText(problemaCurenta.getSolutie());
                 }
 
 
@@ -81,7 +113,7 @@ public class ClientActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),GenerareAvocatiActivity.class);
-                intent.putExtra("problemaClient",problemaCurenta);
+                intent.putExtra("specializare",problemaCurenta.getSpecializare());
                 startActivity(intent);
             }
         });
@@ -103,7 +135,7 @@ public class ClientActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(getApplicationContext(),LogInActivity.class));
         }else if(id==R.id.meniu_despre_tine){
-            startActivity(new Intent(getApplicationContext(),DespreClientActivity.class));
+            startActivity(new Intent(getApplicationContext(),ProfilClientActivity.class));
         }else if(id==R.id.meniu_chat){
             startActivity(new Intent(getApplicationContext(),ListaEmailuriAvocatiActivity.class));
 

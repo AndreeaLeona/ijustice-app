@@ -68,7 +68,6 @@ public class DespreClientActivity extends AppCompatActivity {
                 } catch (Exception ex) {
                     Toast.makeText(getApplicationContext(), "Datele tale nu au fost salvate, te rog sa verifici conexiunea la internet", Toast.LENGTH_SHORT).show();
 
-
                 }
 
 

@@ -18,10 +18,10 @@ import java.util.ArrayList;
 
 public class GenerareAvocatiActivity extends AppCompatActivity {
     TextView tvProblema;
-    ArrayList<String> listaProbleme;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView lvAvocati;
+    String specializare;
     ArrayList<UserAvocat> listaAvocati;
     ArrayAdapter<UserAvocat> adapter;
 
@@ -35,20 +35,15 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<UserAvocat>(this,R.layout.adapater_listview_avocati,R.id.adapter_tv_avocati,listaAvocati);
         databaseReference = firebaseDatabase.getReference();
         Intent intent=getIntent();
-        String problema=intent.getStringExtra("problemaClient");
+        specializare=intent.getStringExtra("specializare");
         tvProblema=(TextView)findViewById(R.id.generare_tv_problema);
-        tvProblema.setText(problema);
-        listaProbleme=new ArrayList<String>();
-        listaProbleme.add("Agresiune verbala");
-        listaProbleme.add("Accident rutier");
-        listaProbleme.add("Furt");
-        if(problema.equals(listaProbleme.get(0))){
+        tvProblema.setText("Avocați cu specializarea " + specializare);
+
             databaseReference.child("users").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                     for (DataSnapshot ds : children) {
-                        if(ds.child("specializare").getValue(String.class).equals("Penal")){
                             String nume=ds.child("nume").getValue(String.class);
                             String prenume=ds.child("prenume").getValue(String.class);
                             String email=ds.child("email").getValue(String.class);
@@ -58,11 +53,13 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
                             String oras=ds.child("oras").getValue(String.class);
                             String strada=ds.child("strada").getValue(String.class);
                             int nr=ds.child("nr").getValue(int.class);
-                            String specializare=ds.child("specializare").getValue(String.class);
-                            UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializare);
-                            listaAvocati.add(avocat);
+                            String specializareAvocat=ds.child("specializare").getValue(String.class);
+                            UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializareAvocat);
+                            if(avocat.getSpecializare().equals(specializare)) {
+                                listaAvocati.add(avocat);
+                            }
 
-                        }
+
                     }
                     lvAvocati.setAdapter(adapter);
                 }
@@ -76,4 +73,4 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
 
         }
     }
-}
+
