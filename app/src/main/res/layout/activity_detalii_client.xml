@@ -11,7 +11,7 @@
         android:layout_height="356dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="21dp"
         tools:layout_editor_absoluteX="22dp"
         tools:layout_editor_absoluteY="38dp">
 
@@ -225,7 +225,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
-        app:srcCompat="@drawable/clienticon" />
+        app:srcCompat="@drawable/dealdeal" />
 
 
 </RelativeLayout>

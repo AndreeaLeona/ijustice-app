@@ -5,25 +5,32 @@
     <ImageView
         android:id="@+id/img_clienti"
         android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/clienticon"/>
-    <TextView
-        android:id="@+id/item_lv_clienti_texview_nume"
+        android:layout_height="80dp"
+        android:src="@drawable/dealdeal"/>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/img_clienti"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/item_lv_clienti_texview_oras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_clienti"
-        android:layout_below="@id/item_lv_clienti_texview_nume"
-        android:layout_margin="10dp"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:paddingTop="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/item_lv_clienti_texview_nume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/item_lv_clienti_texview_oras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>

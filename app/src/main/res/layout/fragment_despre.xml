@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/flower"
     tools:context=".DespreFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,6 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="30dp"
         android:text="@string/aplicatia_face_posibil_ca_informatiile_despre_serviciile_tale_sa_ajunga_la_potentialii_clienti_de_asemenea_poti_gestiona_cu_ajutorul_aplicatiei_datele_despre_clientii_cu_care_comunici_notite_care_te_ajuta_in_activitatile_de_zi_cu_zi"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -22,10 +25,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textColor="@color/white"
+        android:textColor="#000000"
         android:textStyle="italic|bold"
+        android:paddingLeft="20dp"
+        android:layout_toRightOf="@id/imageView5"
         android:textSize="25dp"
         android:layout_marginBottom="76dp"
         android:text="Date de contact: nica.leona97@gmail.com" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="67dp"
+        android:layout_marginStart="29dp"
+        android:src="@drawable/eu" />
 
 </RelativeLayout>

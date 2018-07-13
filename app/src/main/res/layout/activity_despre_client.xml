@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DespreClientActivity">
+
     <FrameLayout
         android:layout_width="341dp"
         android:layout_height="300dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="55dp"
         tools:layout_editor_absoluteX="22dp"
         tools:layout_editor_absoluteY="38dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,6 +27,7 @@
                 <EditText
                     android:id="@+id/despre_client_et_nume"
                     android:layout_width="match_parent"
+                    android:hint="Nume"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_face_login" />
             </android.support.design.widget.TextInputLayout>
@@ -37,6 +40,7 @@
                     android:id="@+id/despre_client_et_adresa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Adresă"
                     android:drawableLeft="@drawable/ic_place_black" />
             </android.support.design.widget.TextInputLayout>
 
@@ -48,6 +52,7 @@
                     android:id="@+id/despre_client_et_telefon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Număr de telefon"
                     android:drawableLeft="@drawable/ic_phone_black" />
             </android.support.design.widget.TextInputLayout>
 
@@ -59,6 +64,7 @@
                     android:id="@+id/despre_client_et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Adresă de email"
                     android:drawableLeft="@drawable/ic_email_black_24dp" />
             </android.support.design.widget.TextInputLayout>
 
@@ -69,13 +75,24 @@
     </FrameLayout>
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/despre_client_btn_salveaza"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="84dp"
-        android:background="@drawable/rounded_button"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="@color/grenaInchis"
-        android:text="Adauga" />
+        android:text="Salvează" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="42dp"
+        android:text="Introdu datele necesare construirii profilului tău!" />
 
 </RelativeLayout>

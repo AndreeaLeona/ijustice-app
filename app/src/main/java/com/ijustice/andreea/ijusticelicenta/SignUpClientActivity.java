@@ -66,7 +66,7 @@ public class SignUpClientActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(getApplicationContext(),ClientActivity.class));
+                    startActivity(new Intent(getApplicationContext(),DespreClientActivity.class));
                 }else{
                     Toast.makeText(getApplicationContext(), R.string.inregistrare_nereusita,Toast.LENGTH_SHORT).show();
 

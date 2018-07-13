@@ -39,7 +39,7 @@
         <activity android:name=".AdaugaCazActivity" />
         <activity android:name=".DetaliiCazActivity" />
         <activity android:name=".EditareCazActivity" />
-        <activity android:name=".SchimbaParolaActivity"></activity>
+        <activity android:name=".SchimbaParolaActivity" />
     </application>
 
 </manifest>
