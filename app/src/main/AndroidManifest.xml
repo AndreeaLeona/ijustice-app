@@ -42,7 +42,8 @@
         <activity android:name=".SchimbaParolaActivity" />
         <activity android:name=".ProfilClientActivity" />
         <activity android:name=".EditareProfilActivity" />
-        <activity android:name=".VizualizareAvocatActivity"></activity>
+        <activity android:name=".VizualizareAvocatActivity" />
+        <activity android:name=".VizualizareSolicitareClientActivity"></activity>
     </application>
 
 </manifest>

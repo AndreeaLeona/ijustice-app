@@ -50,7 +50,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
             etStrada = (EditText) findViewById(R.id.edit_et_strada);
             etNr = (EditText) findViewById(R.id.edit_et_nr);
             etSpecializare=(EditText)findViewById(R.id.edit_et_specializare);
-            etSpecializare=(EditText)findViewById(R.id.edit_et_specializare_precizare);
+            etSpecializarePrecizare=(EditText)findViewById(R.id.edit_et_specializare_precizare);
             btnSalveaza = (Button) findViewById(R.id.edit_btn_salveaza_modificari);
             auth = FirebaseAuth.getInstance();
             firebaseDatabase = FirebaseDatabase.getInstance();

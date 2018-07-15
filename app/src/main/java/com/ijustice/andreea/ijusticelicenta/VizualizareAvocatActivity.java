@@ -46,7 +46,7 @@ public class VizualizareAvocatActivity extends AppCompatActivity {
         FirebaseUser user=auth.getCurrentUser();
         userId=user.getUid();
         Intent intent=getIntent();
-             cheie=intent.getStringExtra("Key");
+            cheie=intent.getStringExtra("Key");
             String nume=intent.getStringExtra("Nume");
             String prenume=intent.getStringExtra("Prenume");
             String specializare=intent.getStringExtra("Specializare");
@@ -67,11 +67,17 @@ public class VizualizareAvocatActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.hasChild(userId)){
                     String solicitare=dataSnapshot.child(userId).child("tip solicitare").getValue().toString();
-                    if(solicitare.equals("primita")){
+                    if(solicitare.equals("primita")) {
                         btnTrimite.setEnabled(true);
                         btnTrimite.setText("Anulează solicitare");
-                        stareCurenta=1;
+                        stareCurenta = 1;
                     }
+                else if(solicitare.equals("trimisa")){
+                    btnTrimite.setEnabled(true);
+                    stareCurenta=2;
+                }
+
+
                 }
             }
 
@@ -91,9 +97,16 @@ public class VizualizareAvocatActivity extends AppCompatActivity {
                     setValue("primita").addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    btnTrimite.setEnabled(true);
-                    btnTrimite.setText("Anulează");
-                    stareCurenta=1;
+                    databaseReference.child("solicitari").child(userId).child(cheie).child("tip solicitare").
+                            setValue("trimisa").addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            btnTrimite.setEnabled(true);
+                            btnTrimite.setText("Anulează");
+                            stareCurenta=1;
+
+                        }
+                    });
 
                 }
             });
@@ -110,6 +123,8 @@ public class VizualizareAvocatActivity extends AppCompatActivity {
                 }
             });
         }
+      Intent intentStare=new Intent(getApplicationContext(),VizualizareSolicitareClientActivity.class);
+        intentStare.putExtra("stareCurent",stareCurenta);
 
     }
 }

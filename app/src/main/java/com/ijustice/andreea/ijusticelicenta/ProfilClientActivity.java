@@ -1,7 +1,9 @@
 package com.ijustice.andreea.ijusticelicenta;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -35,20 +37,30 @@ public class ProfilClientActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("users_clienti");
         FirebaseUser user = auth.getCurrentUser();
         userId = user.getUid();
+        btnEditeaza=(ImageButton)findViewById(R.id.img_btn_profil_client) ;
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String nume = dataSnapshot.child(userId).child("nume").getValue(String.class);
-                String adresa = dataSnapshot.child(userId).child("adresa").getValue(String.class);
-                String email = dataSnapshot.child(userId).child("email").getValue(String.class);
-                String nrTelefon = dataSnapshot.child(userId).child("telefon").getValue(String.class);
+                final String nume = dataSnapshot.child(userId).child("nume").getValue(String.class);
+               final String adresa = dataSnapshot.child(userId).child("adresa").getValue(String.class);
+                final String email = dataSnapshot.child(userId).child("email").getValue(String.class);
+                final String nrTelefon = dataSnapshot.child(userId).child("telefon").getValue(String.class);
 
                 UserClient userClient=new UserClient(nume,adresa,nrTelefon,email);
                 tvNume.setText(userClient.getNume().toString());
                 tvAdresa.setText(userClient.getAdresa().toString());
                 tvEmail.setText(userClient.getEmail().toString());
                 tvTelefon.setText(userClient.getNumarTelefon().toString());
+                btnEditeaza.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getApplicationContext(),EditareProfilActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
 
             }
 
@@ -57,5 +69,6 @@ public class ProfilClientActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }
