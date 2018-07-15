@@ -66,18 +66,16 @@ public class AdaugaClientActivity extends AppCompatActivity {
                     String email = etEmail.getText().toString();
                     String precizari = etPrecizari.getText().toString();
 
-                    Client c = new Client(nume, prenume, adresa, oras, telefon, email, precizari);
                     Map client = new HashMap<>();
-                    client.put("nume", c.getNume());
-                    client.put("prenume", c.getPrenume());
-                    client.put("adresa", c.getAdresa());
-                    client.put("oras", c.getOras());
-                    client.put("telefon", c.getNrTelefon());
-                    client.put("email", c.getAdresaEmail());
-                    client.put("precizari", c.getPrecizari());
-                    String idClient = String.valueOf(c.getId());
+                    client.put("nume", nume);
+                    client.put("prenume", prenume);
+                    client.put("adresa",adresa);
+                    client.put("oras", oras);
+                    client.put("telefon", telefon);
+                    client.put("email", email);
+                    client.put("precizari", precizari);
 
-                    databaseReference.child("clienti").child(userId).child(idClient).setValue(client);
+                    databaseReference.child("clienti").child(userId).push().setValue(client);
                     Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
                 }
             }

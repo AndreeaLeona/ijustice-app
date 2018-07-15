@@ -48,8 +48,8 @@ public class EditareCazActivity extends AppCompatActivity {
 
         if (intent.getExtras() != null) {
 
-            final int id = intent.getIntExtra("id", -1);
-            databaseReference = firebaseDatabase.getReference("cazuri").child(userId).child(String.valueOf(id));
+            final String cheie = intent.getStringExtra("cheie");
+            databaseReference = firebaseDatabase.getReference("cazuri").child(userId).child(cheie);
 
             String obiect = intent.getStringExtra("obiect");
             int numar = intent.getIntExtra("numar", -1);
@@ -76,14 +76,14 @@ public class EditareCazActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Caz c = new Caz(etObiect.getText().toString(), Integer.parseInt(etNumar.getText().toString()),etNume.getText().toString(),
-                            etData.getText().toString(), etDescriere.getText().toString());
+                            etData.getText().toString(), etDescriere.getText().toString(),cheie);
                     Map caz = new HashMap<>();
                     caz.put("obiect",c.getObiect());
                     caz.put("numar",c.getNrOrdine());
                     caz.put("numeSolicitant",c.getNumeSolicitant());
                     caz.put("data",c.getData());
                     caz.put("descriere",c.getDescriere());
-                    databaseReference.setValue(caz);
+                    databaseReference.updateChildren(caz);
                     Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
                             Toast.LENGTH_SHORT).show();
                 }

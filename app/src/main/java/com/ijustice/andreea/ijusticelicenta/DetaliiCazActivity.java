@@ -44,8 +44,8 @@ public class DetaliiCazActivity extends AppCompatActivity {
         imgBtnStergere=(ImageButton)findViewById(R.id.imageBtnDeleteCaz);
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
-            final int id = intent.getIntExtra("id", -1);
-            databaseReference = firebaseDatabase.getReference("cazuri").child(userId).child(String.valueOf(id));
+            final String cheie=intent.getStringExtra("cheie");
+            databaseReference = firebaseDatabase.getReference("cazuri").child(userId).child(cheie);
             final String obiect = intent.getStringExtra("obiect");
             final int numar = intent.getIntExtra("numar", -1);
             final String nume = intent.getStringExtra("numeSolicitant");
@@ -62,7 +62,7 @@ public class DetaliiCazActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent i=new Intent(getApplicationContext(),EditareCazActivity.class);
-                    i.putExtra("id",id);
+                    i.putExtra("cheie",cheie);
                     i.putExtra("obiect",obiect);
                     i.putExtra("numar",numar);
                     i.putExtra("numeSolicitant",nume);
@@ -99,6 +99,11 @@ public class DetaliiCazActivity extends AppCompatActivity {
                         databaseReference.removeValue();
                         dialog.dismiss();
                         Toast.makeText(getApplicationContext(),"Cazul a fost șters",Toast.LENGTH_SHORT).show();
+                        tvObiect.setText("Aceste date au fost șterse!");
+                        tvNumar.setText("Aceste date au fost șterse!");
+                        tvNume.setText("Aceste date au fost șterse!");
+                        tvData.setText("Aceste date au fost șterse!");
+                        tvDescriere.setText("Aceste date au fost șterse!");
 
 
 

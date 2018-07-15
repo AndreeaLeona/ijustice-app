@@ -10,10 +10,10 @@ public class Client {
     private String nrTelefon;
     private String adresaEmail;
     private String precizari;
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private int id;
+    private String cheie;
 
-    public Client(String nume, String prenume, String adresa, String oras, String nrTelefon, String adresaEmail, String precizari) {
+
+    public Client(String nume, String prenume, String adresa, String oras, String nrTelefon, String adresaEmail, String precizari,String cheie) {
         this.nume = nume;
         this.prenume = prenume;
         this.adresa = adresa;
@@ -21,11 +21,11 @@ public class Client {
         this.nrTelefon = nrTelefon;
         this.adresaEmail = adresaEmail;
         this.precizari = precizari;
-        this.id=count.incrementAndGet();
+        this.cheie=cheie;
     }
 
-    public int getId() {
-        return id;
+    public String getCheie() {
+        return cheie;
     }
 
     public Client() {

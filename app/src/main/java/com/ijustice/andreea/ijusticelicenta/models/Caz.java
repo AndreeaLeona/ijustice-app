@@ -8,21 +8,22 @@ public class Caz {
     private String numeSolicitant;
     private String data;
     private String descriere;
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private int id;
+    private String cheie;
 
-    public Caz(String obiect, int nrOrdine, String numeSolicitant, String data, String descriere) {
+
+    public Caz(String obiect, int nrOrdine, String numeSolicitant, String data, String descriere,String cheie) {
         this.obiect = obiect;
         this.nrOrdine = nrOrdine;
         this.numeSolicitant = numeSolicitant;
         this.data = data;
         this.descriere = descriere;
-        this.id=count.incrementAndGet();
+        this.cheie=cheie;
 
     }
 
-    public int getId() {
-        return id;
+
+    public String getCheie() {
+        return cheie;
     }
 
     public String getObiect() {

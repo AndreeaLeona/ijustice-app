@@ -49,8 +49,8 @@ public class EditareClientActivity extends AppCompatActivity {
 
         if (intent.getExtras() != null) {
 
-            final int id=intent.getIntExtra("id",-1);
-            databaseReference = firebaseDatabase.getReference("clienti").child(userId).child(String.valueOf(id));
+            final String cheie=intent.getStringExtra("cheie");
+            databaseReference = firebaseDatabase.getReference("clienti").child(userId).child(cheie);
 
             String  nume = intent.getStringExtra("nume");
             String prenume = intent.getStringExtra("prenume");
@@ -71,7 +71,7 @@ public class EditareClientActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Client c = new Client(etNume.getText().toString(), etPrenume.getText().toString(),etAdresa.getText().toString(),
-                            etOras.getText().toString(), etTelefon.getText().toString(),etEmail.getText().toString(),etPrecizari.getText().toString());
+                            etOras.getText().toString(), etTelefon.getText().toString(),etEmail.getText().toString(),etPrecizari.getText().toString(),cheie);
                     Map client = new HashMap<>();
                     client.put("nume",c.getNume());
                     client.put("prenume",c.getPrenume());

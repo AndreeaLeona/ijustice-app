@@ -40,6 +40,7 @@ public class ClientiFragment extends Fragment {
     FirebaseAuth auth;
     String userId;
     TextView tvMesaj;
+    String cheie;
 
 
     public ClientiFragment() {
@@ -72,6 +73,7 @@ public class ClientiFragment extends Fragment {
                 listaClienti.clear();
                 listView.setAdapter(null);
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
+                    cheie=ds.getKey();
                     String nume = ds.child("nume").getValue(String.class);
                     String prenume = ds.child("prenume").getValue(String.class);
                     String adresa = ds.child("adresa").getValue(String.class);
@@ -80,7 +82,7 @@ public class ClientiFragment extends Fragment {
                     String email = ds.child("email").getValue(String.class);
                     String precizari = ds.child("precizari").getValue(String.class);
 
-                    Client client=new Client(nume,prenume,adresa,oras,telefon,email,precizari);
+                    Client client=new Client(nume,prenume,adresa,oras,telefon,email,precizari,cheie);
 
                      listaClienti.add(client);
 
@@ -119,7 +121,7 @@ public class ClientiFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Client client=adapter.getItem(position);
                 Intent intent=new Intent(getActivity(),DetaliiClientActivity.class);
-                intent.putExtra("id",client.getId());
+                intent.putExtra("cheie",client.getCheie());
                 intent.putExtra("Nume", client.getNume());
                 intent.putExtra("Prenume",client.getPrenume());
                 intent.putExtra("Adresa",client.getAdresa());

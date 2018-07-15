@@ -52,8 +52,8 @@ public class DetaliiClientActivity extends AppCompatActivity {
         tvPrecizari=(TextView)findViewById(R.id.vizualizeaza_client_et_precizari);
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
-             final int id=intent.getIntExtra("id",-1);
-             databaseReference=firebaseDatabase.getReference("clienti").child(userId).child(String.valueOf(id));
+             final String cheie=intent.getStringExtra("cheie");
+             databaseReference=firebaseDatabase.getReference("clienti").child(userId).child(cheie);
              final String  nume = intent.getStringExtra("Nume");
              final String prenume = intent.getStringExtra("Prenume");
              final String adresa = intent.getStringExtra("Adresa");
@@ -72,7 +72,7 @@ public class DetaliiClientActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent i=new Intent(getApplicationContext(),EditareClientActivity.class);
-                    i.putExtra("id",id);
+                    i.putExtra("cheie",cheie);
                     i.putExtra("nume",nume);
                     i.putExtra("prenume",prenume);
                     i.putExtra("adresa",adresa);
@@ -88,6 +88,8 @@ public class DetaliiClientActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     AlertDialog diaBox = AskOption();
                     diaBox.show();
+
+
                 }
             });
 
@@ -111,7 +113,13 @@ public class DetaliiClientActivity extends AppCompatActivity {
                         databaseReference.removeValue();
                         dialog.dismiss();
                         Toast.makeText(getApplicationContext(),"Clientul a fost șters",Toast.LENGTH_SHORT).show();
-
+                        tvNume.setText("Aceste date au fost șterse!");
+                        tvPrenume.setText("Aceste date au fost șterse!");
+                        tvAdresa.setText("Aceste date au fost șterse!");
+                        tvTelefon.setText("Aceste date au fost șterse!");
+                        tvEmail.setText("Aceste date au fost șterse!");
+                        tvPrecizari.setText("Aceste date au fost șterse!");
+                        tvOras.setText("Aceste date au fost șterse!");
 
 
                     }

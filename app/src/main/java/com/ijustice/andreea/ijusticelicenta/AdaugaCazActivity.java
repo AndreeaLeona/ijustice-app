@@ -71,17 +71,15 @@ public class AdaugaCazActivity extends AppCompatActivity {
                     String descriere = etDescriere.getText().toString();
 
 
-                    Caz c = new Caz(obiect, numar, nume, data, descriere);
                     Map caz = new HashMap<>();
-                    caz.put("obiect", c.getObiect());
-                    caz.put("numar", c.getNrOrdine());
-                    caz.put("numeSolicitant", c.getNumeSolicitant());
-                    caz.put("data", c.getData());
-                    caz.put("descriere", c.getDescriere());
+                    caz.put("obiect", obiect);
+                    caz.put("numar", numar);
+                    caz.put("numeSolicitant",nume);
+                    caz.put("data", data);
+                    caz.put("descriere", descriere);
 
-                    String idCaz = String.valueOf(c.getId());
 
-                    databaseReference.child("cazuri").child(userId).child(idCaz).setValue(caz);
+                    databaseReference.child("cazuri").child(userId).push().setValue(caz);
                     Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
                 }
             }

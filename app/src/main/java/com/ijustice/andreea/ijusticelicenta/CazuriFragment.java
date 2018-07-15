@@ -37,6 +37,7 @@ public class CazuriFragment extends Fragment {
     List<Caz> listaCazuri;
     CazuriAdapter adapter;
     FirebaseAuth auth;
+    String cheie;
     String userId;
     TextView tvMesaj;
 
@@ -70,6 +71,7 @@ public class CazuriFragment extends Fragment {
                 listaCazuri.clear();
                 listView.setAdapter(null);
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
+                    cheie=ds.getKey();
                     String obiect = ds.child("obiect").getValue(String.class);
                     int numar = ds.child("numar").getValue(int.class);
                     String numeSolicitant = ds.child("numeSolicitant").getValue(String.class);
@@ -77,7 +79,7 @@ public class CazuriFragment extends Fragment {
                     String descriere = ds.child("descriere").getValue(String.class);
 
 
-                    Caz caz=new Caz(obiect,numar,numeSolicitant,data,descriere);
+                    Caz caz=new Caz(obiect,numar,numeSolicitant,data,descriere,cheie);
 
                     listaCazuri.add(caz);
 
@@ -115,7 +117,7 @@ public class CazuriFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Caz caz=adapter.getItem(position);
                 Intent intent=new Intent(getActivity(),DetaliiCazActivity.class);
-                intent.putExtra("id",caz.getId());
+                intent.putExtra("cheie",caz.getCheie());
                 intent.putExtra("obiect", caz.getObiect());
                 intent.putExtra("numar",caz.getNrOrdine());
                 intent.putExtra("numeSolicitant",caz.getNumeSolicitant());
