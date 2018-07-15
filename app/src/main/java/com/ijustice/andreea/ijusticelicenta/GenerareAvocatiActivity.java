@@ -3,6 +3,8 @@ package com.ijustice.andreea.ijusticelicenta;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ListView lvAvocati;
     String specializare;
+    String Key;
     ArrayList<UserAvocat> listaAvocati;
     ArrayAdapter<UserAvocat> adapter;
 
@@ -44,6 +47,7 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                     for (DataSnapshot ds : children) {
+                            Key=ds.getKey();
                             String nume=ds.child("nume").getValue(String.class);
                             String prenume=ds.child("prenume").getValue(String.class);
                             String email=ds.child("email").getValue(String.class);
@@ -54,7 +58,10 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
                             String strada=ds.child("strada").getValue(String.class);
                             int nr=ds.child("nr").getValue(int.class);
                             String specializareAvocat=ds.child("specializare").getValue(String.class);
-                            UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializareAvocat);
+                           String precizareSpecializare=ds.child("specializarePrecizare").getValue(String.class);
+
+
+                        UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializareAvocat,precizareSpecializare);
                             if(avocat.getSpecializare().equals(specializare)) {
                                 listaAvocati.add(avocat);
                             }
@@ -68,6 +75,19 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
 
+                }
+            });
+            lvAvocati.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    UserAvocat avocat=adapter.getItem(position);
+                    Intent intentRequest=new Intent(getApplicationContext(),VizualizareAvocatActivity.class);
+                    intentRequest.putExtra("Key",Key);
+                    intentRequest.putExtra("Nume",avocat.getNume());
+                    intentRequest.putExtra("Prenume",avocat.getPrenume());
+                    intentRequest.putExtra("Specializare",avocat.getSpecializare());
+                    intentRequest.putExtra("Precizare",avocat.getSpecializarePrecizre());
+                    startActivity(intentRequest);
                 }
             });
 

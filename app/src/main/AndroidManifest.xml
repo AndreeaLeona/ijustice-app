@@ -40,7 +40,9 @@
         <activity android:name=".DetaliiCazActivity" />
         <activity android:name=".EditareCazActivity" />
         <activity android:name=".SchimbaParolaActivity" />
-        <activity android:name=".ProfilClientActivity"></activity>
+        <activity android:name=".ProfilClientActivity" />
+        <activity android:name=".EditareProfilActivity" />
+        <activity android:name=".VizualizareAvocatActivity"></activity>
     </application>
 
 </manifest>

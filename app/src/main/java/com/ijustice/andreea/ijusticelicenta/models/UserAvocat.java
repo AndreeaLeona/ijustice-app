@@ -11,9 +11,10 @@ public class UserAvocat {
     private String strada;
     private int nr;
     private String specializare;
+    private String specializarePrecizre;
 
     public UserAvocat(String nume, String prenume, String email, String numarTelefon,
-                      int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr, String specializare) {
+                      int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr, String specializare,String specializarePrecizare) {
         this.nume = nume;
         this.prenume = prenume;
         this.email = email;
@@ -24,9 +25,18 @@ public class UserAvocat {
         this.strada = strada;
         this.nr = nr;
         this.specializare=specializare;
+        this.specializarePrecizre=specializarePrecizare;
     }
 
     public UserAvocat() {
+    }
+
+    public String getSpecializarePrecizre() {
+        return specializarePrecizre;
+    }
+
+    public void setSpecializarePrecizre(String specializarePrecizre) {
+        this.specializarePrecizre = specializarePrecizre;
     }
 
     public String getNume() {
@@ -113,6 +123,7 @@ public class UserAvocat {
     public String toString() {
         return  "Nume avocat: " + this.nume + " " + this.prenume + "\n" +
                 "Specializare: " + this.specializare + "\n" +
+                "Precizare specializare: " + this.specializarePrecizre + "\n" +
                 "Informatii contact:" + this.email + " " + this.numarTelefon + "\n"+
                 "Cazuri pierdute: " + this.cazuriPierdute + ", " + "Cazuri rezolvate: "
                 +this.cazuriRezolvate + "\n" + "Adresa: "   + this.oras + ", " + this.strada + ", " +this.nr + "\n";

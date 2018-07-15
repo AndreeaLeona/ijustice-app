@@ -28,6 +28,7 @@ public class InformatiiActivity extends AppCompatActivity {
     EditText etStrada;
     EditText etNr;
     EditText etSpecializare;
+    EditText etSpecializarePrecizare;
     Button btnSalveaza;
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
@@ -46,6 +47,7 @@ public class InformatiiActivity extends AppCompatActivity {
         etCazuriRezolvate=(EditText)findViewById(R.id.info_et_nr_cazuri_rezolvate);
         etCazuriPierdute=(EditText)findViewById(R.id.info_et_nr_cazuri_pierdute);
         etSpecializare=(EditText)findViewById(R.id.info_et_specializare) ;
+        etSpecializarePrecizare=(EditText)findViewById(R.id.info_et_specializare_precizare) ;
         etOras=(EditText)findViewById(R.id.info_et_oras);
         etStrada=(EditText) findViewById(R.id.info_et_strada);
         etNr=(EditText)findViewById(R.id.info_et_nr);
@@ -73,7 +75,8 @@ public class InformatiiActivity extends AppCompatActivity {
                     String strada = etStrada.getText().toString();
                     int nr = Integer.parseInt(etNr.getText().toString());
                     String specializare=etSpecializare.getText().toString();
-                    UserAvocat u = new UserAvocat(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
+                    String specializarePrecizare=etSpecializarePrecizare.getText().toString();
+                    UserAvocat u = new UserAvocat(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare,specializarePrecizare);
 
                     Map informatii = new HashMap<>();
 
@@ -87,6 +90,7 @@ public class InformatiiActivity extends AppCompatActivity {
                     informatii.put("strada", u.getStrada());
                     informatii.put("nr", u.getNr());
                     informatii.put("specializare",u.getSpecializare());
+                    informatii.put("specializarePrecizare",u.getSpecializarePrecizre());
                     try {
 
                         databaseReference.child("users").child(userId).setValue(informatii);

@@ -90,16 +90,8 @@ public class ClientActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 problemaCurenta=listaProbleme.get(position);
-                if(problemaCurenta.getSpecializare().equals("penal")){
-                    tvDetalii.setText(problemaCurenta.getSolutie().toString());
+                tvDetalii.setText(problemaCurenta.getSolutie().toString());
 
-
-                }else if(problemaCurenta.getSpecializare().equals("comercial")){
-                    tvDetalii.setText(problemaCurenta.getSolutie().toString());
-
-                }else if(problemaCurenta.getSpecializare().equals("administrativ")){
-                    tvDetalii.setText(problemaCurenta.getSolutie());
-                }
 
 
             }

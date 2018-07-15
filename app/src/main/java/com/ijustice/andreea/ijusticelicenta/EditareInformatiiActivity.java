@@ -27,6 +27,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
     EditText etStrada;
     EditText etNr;
     EditText etSpecializare;
+    EditText etSpecializarePrecizare;
     Button btnSalveaza;
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
@@ -49,6 +50,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
             etStrada = (EditText) findViewById(R.id.edit_et_strada);
             etNr = (EditText) findViewById(R.id.edit_et_nr);
             etSpecializare=(EditText)findViewById(R.id.edit_et_specializare);
+            etSpecializare=(EditText)findViewById(R.id.edit_et_specializare_precizare);
             btnSalveaza = (Button) findViewById(R.id.edit_btn_salveaza_modificari);
             auth = FirebaseAuth.getInstance();
             firebaseDatabase = FirebaseDatabase.getInstance();
@@ -70,7 +72,8 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                     String strada = dataSnapshot.child(userId).child("strada").getValue(String.class);
                     int nr = dataSnapshot.child(userId).child("nr").getValue(int.class);
                     String specializare=dataSnapshot.child(userId).child("specializare").getValue(String.class);
-                    UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
+                    String specializarePrecizare=dataSnapshot.child(userId).child("specializarePrecizare").getValue(String.class);
+                    UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare,specializarePrecizare);
 
 
 
@@ -81,6 +84,8 @@ public class EditareInformatiiActivity extends AppCompatActivity {
               etNrTelefon.setText(u.getNumarTelefon().toString());
               etCazuriRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
               etCazuriPierdute.setText(String.valueOf(u.getCazuriPierdute()));
+              etSpecializare.setText(u.getSpecializare().toString());
+              etSpecializarePrecizare.setText(u.getSpecializarePrecizre().toString());
               etOras.setText(u.getOras().toString());
               etStrada.setText(u.getStrada().toString());
               etNr.setText(String.valueOf(u.getNr()));
@@ -92,7 +97,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             UserAvocat nou = new UserAvocat(etNume.getText().toString(), etPrenume.getText().toString(), etEmail.getText().toString(), etNrTelefon.getText().toString(),
                                     Integer.parseInt(etCazuriRezolvate.getText().toString()), Integer.parseInt(etCazuriPierdute.getText().toString()), etOras.getText().toString(),
-                                    etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()),etSpecializare.getText().toString());
+                                    etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()),etSpecializare.getText().toString(),etSpecializarePrecizare.getText().toString());
                             databaseReference.child(userId).setValue(nou);
                             Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
                                     Toast.LENGTH_SHORT).show();

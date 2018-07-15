@@ -25,7 +25,7 @@ import com.ijustice.andreea.ijusticelicenta.models.UserAvocat;
  * A simple {@link Fragment} subclass.
  */
 public class ProfilFragment extends Fragment {
-    TextView tvNume, tvPrenume,tvEmail,tvTelefon,tvRezolvate,tvPierdute,tvSpecializare,tvOras,tvStrada,tvNr;
+    TextView tvNume, tvPrenume,tvEmail,tvTelefon,tvRezolvate,tvPierdute,tvSpecializare,tvSpecializarePrecizare,tvOras,tvStrada,tvNr;
     FirebaseAuth auth;
     ImageButton btnEditeaza;
     FirebaseDatabase firebaseDatabase;
@@ -51,6 +51,7 @@ public class ProfilFragment extends Fragment {
         tvRezolvate=v.findViewById(R.id.tv_profil_rezolvate);
         tvPierdute=v.findViewById(R.id.tv_profil_pierdute);
         tvSpecializare=v.findViewById(R.id.tv_profil_specializare);
+        tvSpecializarePrecizare=v.findViewById(R.id.tv_profil_specializare_precizare);
         tvOras=v.findViewById(R.id.tv_profil_oras);
         tvStrada=v.findViewById(R.id.tv_profil_strada);
         tvNr=v.findViewById(R.id.tv_profil_nrcasa);
@@ -74,7 +75,9 @@ public class ProfilFragment extends Fragment {
                 String strada = dataSnapshot.child(userId).child("strada").getValue(String.class);
                 int nr = dataSnapshot.child(userId).child("nr").getValue(int.class);
                 String specializare=dataSnapshot.child(userId).child("specializare").getValue(String.class);
-                UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare);
+                String specializarePrecizare=dataSnapshot.child(userId).child("specializarePrecizare").getValue(String.class);
+
+                UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare,specializarePrecizare);
 
 
 
@@ -85,6 +88,7 @@ public class ProfilFragment extends Fragment {
                 tvTelefon.setText(u.getNumarTelefon().toString());
                 tvRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
                 tvSpecializare.setText(u.getSpecializare());
+                tvSpecializarePrecizare.setText(u.getSpecializarePrecizre());
                 tvPierdute.setText(String.valueOf(u.getCazuriPierdute()));
                 tvOras.setText(u.getOras().toString());
                 tvStrada.setText(u.getStrada().toString());

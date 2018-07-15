@@ -105,6 +105,17 @@
                         android:drawableLeft="@drawable/ic_edit_items"
                         android:hint="Specializare" />
                 </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edit_et_specializare_precizare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_edit_items"
+                        android:hint="Precizare specializare,ex: asigurări, societăți comerciale" />
+                </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
