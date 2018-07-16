@@ -1,26 +1,24 @@
 package com.ijustice.andreea.ijusticelicenta.models;
 
 public class Mesaj {
-    private String text;
+    private String continut;
     private String numeTrimitator;
 
 
-    public Mesaj(String text, String nume) {
-        this.text = text;
-        this.numeTrimitator=nume;
+    public Mesaj(String continut, String numeTrimitator) {
+        this.continut = continut;
+        this.numeTrimitator = numeTrimitator;
     }
 
     public String getNumeTrimitator() {
         return numeTrimitator;
     }
 
-    public String getText() {
-        return text;
+    public String getContinut() {
+        return continut;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContinut(String continut) {
+        this.continut = continut;
     }
-
-
 }

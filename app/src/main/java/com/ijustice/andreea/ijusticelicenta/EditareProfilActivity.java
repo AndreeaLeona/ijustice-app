@@ -59,13 +59,15 @@ public class EditareProfilActivity extends AppCompatActivity {
                 btnEditeaza.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (validare()) {
 
-                        databaseReference.child(userId).child("nume").setValue(etNume.getText().toString());
-                        databaseReference.child(userId).child("adresa").setValue(etAdresa.getText().toString());
-                        databaseReference.child(userId).child("telefon").setValue(etTelefon.getText().toString());
-                        databaseReference.child(userId).child("email").setValue(etEmail.getText().toString());
-                        Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
-                                Toast.LENGTH_SHORT).show();
+                            databaseReference.child(userId).child("nume").setValue(etNume.getText().toString());
+                            databaseReference.child(userId).child("adresa").setValue(etAdresa.getText().toString());
+                            databaseReference.child(userId).child("telefon").setValue(etTelefon.getText().toString());
+                            databaseReference.child(userId).child("email").setValue(etEmail.getText().toString());
+                            Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
             }

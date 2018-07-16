@@ -121,7 +121,7 @@ public class EditareClientActivity extends AppCompatActivity {
             etEmail.setError("Nu ai introdus adresa de email!");
             validare=false;
         }else if(etPrecizari.getText().toString().isEmpty()){
-            etTelefon.setError("Nu ai introdus precizările!");
+            etPrecizari.setError("Nu ai introdus precizările!");
             validare=false;
         }
         return validare;
