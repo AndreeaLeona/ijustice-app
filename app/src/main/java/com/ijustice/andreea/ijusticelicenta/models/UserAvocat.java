@@ -12,9 +12,10 @@ public class UserAvocat {
     private int nr;
     private String specializare;
     private String specializarePrecizre;
+    private String cheie;
 
     public UserAvocat(String nume, String prenume, String email, String numarTelefon,
-                      int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr, String specializare,String specializarePrecizare) {
+                      int cazuriRezolvate, int cazuriPierdute, String oras, String strada, int nr, String specializare,String specializarePrecizare, String cheie) {
         this.nume = nume;
         this.prenume = prenume;
         this.email = email;
@@ -26,6 +27,11 @@ public class UserAvocat {
         this.nr = nr;
         this.specializare=specializare;
         this.specializarePrecizre=specializarePrecizare;
+        this.cheie=cheie;
+    }
+
+    public String getCheie() {
+        return cheie;
     }
 
     public UserAvocat() {

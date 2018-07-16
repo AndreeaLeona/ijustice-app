@@ -123,8 +123,7 @@ public class VizualizareAvocatActivity extends AppCompatActivity {
                 }
             });
         }
-      Intent intentStare=new Intent(getApplicationContext(),VizualizareSolicitareClientActivity.class);
-        intentStare.putExtra("stareCurent",stareCurenta);
+
 
     }
 }

@@ -5,12 +5,18 @@ public class UserClient {
     private String adresa;
     private String email;
     private String numarTelefon;
+    private String cheie;
 
-    public UserClient(String nume, String adresa, String email, String numarTelefon) {
+    public UserClient(String nume, String adresa, String email, String numarTelefon, String cheie) {
         this.nume = nume;
         this.adresa = adresa;
         this.email = email;
         this.numarTelefon = numarTelefon;
+        this.cheie=cheie;
+    }
+
+    public String getCheie() {
+        return cheie;
     }
 
     public String getNume() {

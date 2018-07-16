@@ -6,9 +6,16 @@
     tools:context=".ConversatiiFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ListView
+        android:id="@+id/lv_conversatii"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
     <TextView
+        android:id="@+id/tv_mesaj_conversatii"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+       />
 
 </FrameLayout>

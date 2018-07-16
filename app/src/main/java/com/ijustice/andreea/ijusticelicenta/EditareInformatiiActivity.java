@@ -55,13 +55,13 @@ public class EditareInformatiiActivity extends AppCompatActivity {
             auth = FirebaseAuth.getInstance();
             firebaseDatabase = FirebaseDatabase.getInstance();
             databaseReference = firebaseDatabase.getReference("users");
-            FirebaseUser user = auth.getCurrentUser();
+            final FirebaseUser user = auth.getCurrentUser();
             userId = user.getUid();
 
 
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
+                public void onDataChange(final DataSnapshot dataSnapshot) {
                     String nume = dataSnapshot.child(userId).child("nume").getValue(String.class);
                     String prenume = dataSnapshot.child(userId).child("prenume").getValue(String.class);
                     String email = dataSnapshot.child(userId).child("email").getValue(String.class);
@@ -73,34 +73,43 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                     int nr = dataSnapshot.child(userId).child("nr").getValue(int.class);
                     String specializare=dataSnapshot.child(userId).child("specializare").getValue(String.class);
                     String specializarePrecizare=dataSnapshot.child(userId).child("specializarePrecizare").getValue(String.class);
-                    UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare,specializarePrecizare);
 
 
 
 
-              etNume.setText(u.getNume().toString());
-              etPrenume.setText(u.getPrenume().toString());
-              etEmail.setText(u.getEmail().toString());
-              etNrTelefon.setText(u.getNumarTelefon().toString());
-              etCazuriRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
-              etCazuriPierdute.setText(String.valueOf(u.getCazuriPierdute()));
-              etSpecializare.setText(u.getSpecializare().toString());
-              etSpecializarePrecizare.setText(u.getSpecializarePrecizre().toString());
-              etOras.setText(u.getOras().toString());
-              etStrada.setText(u.getStrada().toString());
-              etNr.setText(String.valueOf(u.getNr()));
+              etNume.setText(nume);
+              etPrenume.setText(prenume);
+              etEmail.setText(email);
+              etNrTelefon.setText(nrTelefon);
+              etCazuriRezolvate.setText(String.valueOf(cazuriRezolvate));
+              etCazuriPierdute.setText(String.valueOf(cazuriPierdute));
+              etSpecializare.setText(specializare);
+              etSpecializarePrecizare.setText(specializarePrecizare);
+              etOras.setText(oras);
+              etStrada.setText(strada);
+              etNr.setText(String.valueOf(nr));
 
 
 
                     btnSalveaza.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            UserAvocat nou = new UserAvocat(etNume.getText().toString(), etPrenume.getText().toString(), etEmail.getText().toString(), etNrTelefon.getText().toString(),
-                                    Integer.parseInt(etCazuriRezolvate.getText().toString()), Integer.parseInt(etCazuriPierdute.getText().toString()), etOras.getText().toString(),
-                                    etStrada.getText().toString(), Integer.parseInt(etNr.getText().toString()),etSpecializare.getText().toString(),etSpecializarePrecizare.getText().toString());
-                            databaseReference.child(userId).setValue(nou);
-                            Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
-                                    Toast.LENGTH_SHORT).show();
+                            if (validare()) {
+
+                                databaseReference.child(userId).child("nume").setValue(etNume.getText().toString());
+                                databaseReference.child(userId).child("prenume").setValue(etPrenume.getText().toString());
+                                databaseReference.child(userId).child("email").setValue(etEmail.getText().toString());
+                                databaseReference.child(userId).child("numarTelefon").setValue(etNrTelefon.getText().toString());
+                                databaseReference.child(userId).child("cazuriRezolvate").setValue(Integer.parseInt(etCazuriRezolvate.getText().toString()));
+                                databaseReference.child(userId).child("cazuriPierdute").setValue(Integer.parseInt(etCazuriPierdute.getText().toString()));
+                                databaseReference.child(userId).child("specializare").setValue(etSpecializare.getText().toString());
+                                databaseReference.child(userId).child("specializarePrecizare").setValue(etSpecializarePrecizare.getText().toString());
+                                databaseReference.child(userId).child("oras").setValue(etOras.getText().toString());
+                                databaseReference.child(userId).child("strada").setValue(etStrada.getText().toString());
+                                databaseReference.child(userId).child("nr").setValue(Integer.parseInt(etNr.getText().toString()));
+                                Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 }
@@ -108,6 +117,7 @@ public class EditareInformatiiActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                 }
+
             });
             }catch (Exception ex){
                 Toast.makeText(getApplicationContext(),"Nu exista date de editat",Toast.LENGTH_SHORT).show();
@@ -115,6 +125,39 @@ public class EditareInformatiiActivity extends AppCompatActivity {
 
 
         }
+    public boolean validare(){
+        boolean validare=true;
+        if(etNume.getText().toString().isEmpty()){
+            etNume.setError("Nu ai intodus numele!");
+        }else if(etNume.getText().toString().length()<2){
+            etNume.setError("Numele introdus trebuie să fie format din minim două caractere");
+        }else if(etPrenume.getText().toString().isEmpty()){
+            etPrenume.setError("Nu ai introdus prenumele!");
+        }else if(etPrenume.getText().toString().length()<2){
+            etPrenume.setError("Introdu un prenume format din minim două caractere!");
+        }else if(etEmail.getText().toString().isEmpty()){
+            etEmail.setError("Nu ai introdus adresa de email!");
+        }else if(etNrTelefon.getText().toString().isEmpty()){
+            etNrTelefon.setError("Nu ai introdus numărul de telefon!");
+        }else if(etNrTelefon.getText().toString().length()<10 || etNrTelefon.getText().toString().length()>10){
+            etNrTelefon.setError("Numărul de telefon introdus nu este valid!");
+        }else if(etCazuriRezolvate.getText().toString().isEmpty()){
+            etCazuriRezolvate.setError("Nu ai introdus numărul cazurilor rezolvate!");
+        }else if(etCazuriPierdute.getText().toString().isEmpty()){
+            etCazuriPierdute.setError("Nu ai introdus numărul cazurilor pierdute!");
+        }else if(etSpecializare.getText().toString().isEmpty()){
+            etSpecializare.setError("Nu ai introdus specializarea!");
+        }else if(etSpecializarePrecizare.getText().toString().isEmpty()){
+            etSpecializarePrecizare.setError("Nu ai introdus precizarea specializării!");
+        }else if(etOras.getText().toString().isEmpty()){
+            etOras.setError("Nu ai introduss orașul!");
+        }else if(etStrada.getText().toString().isEmpty()){
+            etStrada.setError("Nu ai introdus strada!");
+        }else if(etNr.getText().toString().isEmpty()){
+            etNr.setError("Nu ai introdus numărul!");
+        }
+        return validare;
+    }
 
 
 

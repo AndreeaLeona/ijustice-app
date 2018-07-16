@@ -77,22 +77,21 @@ public class ProfilFragment extends Fragment {
                 String specializare=dataSnapshot.child(userId).child("specializare").getValue(String.class);
                 String specializarePrecizare=dataSnapshot.child(userId).child("specializarePrecizare").getValue(String.class);
 
-                UserAvocat u = new UserAvocat(nume, prenume, email, nrTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare,specializarePrecizare);
 
 
 
 
-                tvNume.setText(u.getNume().toString());
-                tvPrenume.setText(u.getPrenume().toString());
-                tvEmail.setText(u.getEmail().toString());
-                tvTelefon.setText(u.getNumarTelefon().toString());
-                tvRezolvate.setText(String.valueOf(u.getCazuriRezolvate()));
-                tvSpecializare.setText(u.getSpecializare());
-                tvSpecializarePrecizare.setText(u.getSpecializarePrecizre());
-                tvPierdute.setText(String.valueOf(u.getCazuriPierdute()));
-                tvOras.setText(u.getOras().toString());
-                tvStrada.setText(u.getStrada().toString());
-                tvNr.setText(String.valueOf(u.getNr()));
+                tvNume.setText(nume.toString());
+                tvPrenume.setText(prenume.toString());
+                tvEmail.setText(email.toString());
+                tvTelefon.setText(nrTelefon.toString());
+                tvRezolvate.setText(String.valueOf(cazuriRezolvate));
+                tvSpecializare.setText(specializare.toString());
+                tvSpecializarePrecizare.setText(specializarePrecizare.toString());
+                tvPierdute.setText(String.valueOf(cazuriPierdute));
+                tvOras.setText(oras.toString());
+                tvStrada.setText(strada.toString());
+                tvNr.setText(String.valueOf(nr));
 
             }
 

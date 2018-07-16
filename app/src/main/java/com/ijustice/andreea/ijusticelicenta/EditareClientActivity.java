@@ -70,25 +70,60 @@ public class EditareClientActivity extends AppCompatActivity {
             btnAlveaza.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Client c = new Client(etNume.getText().toString(), etPrenume.getText().toString(),etAdresa.getText().toString(),
-                            etOras.getText().toString(), etTelefon.getText().toString(),etEmail.getText().toString(),etPrecizari.getText().toString(),cheie);
-                    Map client = new HashMap<>();
-                    client.put("nume",c.getNume());
-                    client.put("prenume",c.getPrenume());
-                    client.put("adresa",c.getAdresa());
-                    client.put("oras",c.getOras());
-                    client.put("telefon",c.getNrTelefon());
-                    client.put("email",c.getAdresaEmail());
-                    client.put("precizari",c.getPrecizari());
-                    databaseReference.setValue(client);
-                    Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
-                            Toast.LENGTH_SHORT).show();
+                    if (validare()) {
+                        Client c = new Client(etNume.getText().toString(), etPrenume.getText().toString(), etAdresa.getText().toString(),
+                                etOras.getText().toString(), etTelefon.getText().toString(), etEmail.getText().toString(), etPrecizari.getText().toString(), cheie);
+                        Map client = new HashMap<>();
+                        client.put("nume", c.getNume());
+                        client.put("prenume", c.getPrenume());
+                        client.put("adresa", c.getAdresa());
+                        client.put("oras", c.getOras());
+                        client.put("telefon", c.getNrTelefon());
+                        client.put("email", c.getAdresaEmail());
+                        client.put("precizari", c.getPrecizari());
+                        databaseReference.setValue(client);
+                        Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
+                                Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
+
 
         }
 
 
 
+    }
+    public boolean validare(){
+        boolean validare=true;
+        if(etNume.getText().toString().isEmpty()){
+            etNume.setError("Nu ai introdus numele clientului!");
+            validare=false;
+        }else if(etNume.getText().toString().length()<2){
+            etNume.setError("Introdu un nume format din minim două caractere");
+            validare=false;
+        }else if(etPrenume.getText().toString().isEmpty()){
+            etPrenume.setError("Nu ai introdus prenumele clientului!");
+            validare=false;
+        }else if(etPrenume.getText().toString().length()<2){
+            etPrenume.setError("Prenumele introdus trebuie să aibă o lungime de minim două caractere!");
+            validare=false;
+        }else if(etAdresa.getText().toString().isEmpty()){
+            etAdresa.setError("Adresa nu a fost introdusă!");
+            validare=false;
+        }else if(etOras.getText().toString().isEmpty()){
+            etOras.setError("Nu ai introdus orașul!");
+            validare=false;
+        }else if(etTelefon.getText().toString().isEmpty()){
+            etTelefon.setError("Nu ai introdus numărul de telefon!");
+            validare=false;
+        }else if(etEmail.getText().toString().isEmpty()){
+            etEmail.setError("Nu ai introdus adresa de email!");
+            validare=false;
+        }else if(etPrecizari.getText().toString().isEmpty()){
+            etTelefon.setError("Nu ai introdus precizările!");
+            validare=false;
+        }
+        return validare;
     }
 }

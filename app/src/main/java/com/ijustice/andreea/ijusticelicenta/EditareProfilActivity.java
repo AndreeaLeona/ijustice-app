@@ -39,12 +39,12 @@ public class EditareProfilActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users_clienti");
-        FirebaseUser user = auth.getCurrentUser();
+        final FirebaseUser user = auth.getCurrentUser();
         userId = user.getUid();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(final DataSnapshot dataSnapshot) {
                 String nume = dataSnapshot.child(userId).child("nume").getValue(String.class);
                 String adresa = dataSnapshot.child(userId).child("adresa").getValue(String.class);
                 String email = dataSnapshot.child(userId).child("email").getValue(String.class);
@@ -59,9 +59,11 @@ public class EditareProfilActivity extends AppCompatActivity {
                 btnEditeaza.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UserClient nou = new UserClient(etNume.getText().toString(),etAdresa.getText().toString(),
-                                etTelefon.getText().toString(),etEmail.getText().toString());
-                        databaseReference.child(userId).setValue(nou);
+
+                        databaseReference.child(userId).child("nume").setValue(etNume.getText().toString());
+                        databaseReference.child(userId).child("adresa").setValue(etAdresa.getText().toString());
+                        databaseReference.child(userId).child("telefon").setValue(etTelefon.getText().toString());
+                        databaseReference.child(userId).child("email").setValue(etEmail.getText().toString());
                         Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes1",
                                 Toast.LENGTH_SHORT).show();
                     }
@@ -74,5 +76,28 @@ public class EditareProfilActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public boolean validare() {
+        boolean validare = true;
+        if (etNume.getText().toString().isEmpty()) {
+            etNume.setError("Nu ai introdus numele!");
+            validare = false;
+        } else if (etNume.getText().toString().length() < 2) {
+            etNume.setError("Numele introdus trebuie să fie format din minim două caractere!");
+            validare = false;
+        } else if (etAdresa.getText().toString().isEmpty()) {
+            etAdresa.setError("Nu ai introdus adresa!");
+            validare = false;
+        } else if (etTelefon.getText().toString().isEmpty()) {
+            etTelefon.setError("Nu ai introdus numărul de telefon!");
+            validare = false;
+        } else if (etTelefon.getText().toString().length() < 10 || etTelefon.getText().toString().length() > 10) {
+            etTelefon.setError("Numărul de telefon este incorect!");
+            validare = false;
+        } else if (etEmail.getText().toString().isEmpty()) {
+            etEmail.setError("Nu ai introdus adresa de email!");
+            validare = false;
+        }
+        return validare;
     }
 }

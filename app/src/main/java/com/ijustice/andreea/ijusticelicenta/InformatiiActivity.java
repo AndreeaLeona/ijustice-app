@@ -65,50 +65,85 @@ public class InformatiiActivity extends AppCompatActivity {
             btnSalveaza.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String nume = etNume.getText().toString();
-                    String prenume = etPrenume.getText().toString();
-                    String email = etEmail.getText().toString();
-                    String numarTelefon = etNrTelefon.getText().toString();
-                    int cazuriRezolvate = Integer.parseInt(etCazuriRezolvate.getText().toString());
-                    int cazuriPierdute = Integer.parseInt(etCazuriPierdute.getText().toString());
-                    String oras = etOras.getText().toString();
-                    String strada = etStrada.getText().toString();
-                    int nr = Integer.parseInt(etNr.getText().toString());
-                    String specializare=etSpecializare.getText().toString();
-                    String specializarePrecizare=etSpecializarePrecizare.getText().toString();
-                    UserAvocat u = new UserAvocat(nume, prenume, email, numarTelefon, cazuriRezolvate, cazuriPierdute, oras, strada, nr,specializare,specializarePrecizare);
+                    if (validare()) {
+                        String nume = etNume.getText().toString();
+                        String prenume = etPrenume.getText().toString();
+                        String email = etEmail.getText().toString();
+                        String numarTelefon = etNrTelefon.getText().toString();
+                        int cazuriRezolvate = Integer.parseInt(etCazuriRezolvate.getText().toString());
+                        int cazuriPierdute = Integer.parseInt(etCazuriPierdute.getText().toString());
+                        String oras = etOras.getText().toString();
+                        String strada = etStrada.getText().toString();
+                        int nr = Integer.parseInt(etNr.getText().toString());
+                        String specializare = etSpecializare.getText().toString();
+                        String specializarePrecizare = etSpecializarePrecizare.getText().toString();
 
-                    Map informatii = new HashMap<>();
+                        Map informatii = new HashMap<>();
 
-                    informatii.put("nume", u.getNume());
-                    informatii.put("prenume", u.getPrenume());
-                    informatii.put("email", u.getEmail());
-                    informatii.put("numarTelefon", u.getNumarTelefon());
-                    informatii.put("cazuriRezolvate", u.getCazuriRezolvate());
-                    informatii.put("cazuriPierdute", u.getCazuriPierdute());
-                    informatii.put("oras", u.getOras());
-                    informatii.put("strada", u.getStrada());
-                    informatii.put("nr", u.getNr());
-                    informatii.put("specializare",u.getSpecializare());
-                    informatii.put("specializarePrecizare",u.getSpecializarePrecizre());
-                    try {
+                        informatii.put("nume", nume);
+                        informatii.put("prenume", prenume);
+                        informatii.put("email", email);
+                        informatii.put("numarTelefon", numarTelefon);
+                        informatii.put("cazuriRezolvate", cazuriRezolvate);
+                        informatii.put("cazuriPierdute", cazuriPierdute);
+                        informatii.put("oras", oras);
+                        informatii.put("strada", strada);
+                        informatii.put("nr", nr);
+                        informatii.put("specializare", specializare);
+                        informatii.put("specializarePrecizare", specializarePrecizare);
+                        try {
 
-                        databaseReference.child("users").child(userId).setValue(informatii);
-                        Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),ContActivity.class));
+                            databaseReference.child("users").child(userId).setValue(informatii);
+                            Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), ContActivity.class));
 
-                    } catch (Exception ex) {
-                        Toast.makeText(getApplicationContext(), "Datele tale nu au fost salvate, te rog sa verifici conexiunea la internet", Toast.LENGTH_SHORT).show();
+                        } catch (Exception ex) {
+                            Toast.makeText(getApplicationContext(), "Datele tale nu au fost salvate, te rog sa verifici conexiunea la internet", Toast.LENGTH_SHORT).show();
+
+
+                        }
 
 
                     }
-
-
                 }
             });
         }catch(Exception ex){
             Toast.makeText(getApplicationContext(), "Eroare!", Toast.LENGTH_SHORT).show();
         }
 
+
+    }
+    public boolean validare(){
+        boolean validare=true;
+        if(etNume.getText().toString().isEmpty()){
+            etNume.setError("Nu ai intodus numele!");
+        }else if(etNume.getText().toString().length()<2){
+            etNume.setError("Numele introdus trebuie să fie format din minim două caractere");
+        }else if(etPrenume.getText().toString().isEmpty()){
+            etPrenume.setError("Nu ai introdus prenumele!");
+        }else if(etPrenume.getText().toString().length()<2){
+            etPrenume.setError("Introdu un prenume format din minim două caractere!");
+        }else if(etEmail.getText().toString().isEmpty()){
+            etEmail.setError("Nu ai introdus adresa de email!");
+        }else if(etNrTelefon.getText().toString().isEmpty()){
+            etNrTelefon.setError("Nu ai introdus numărul de telefon!");
+        }else if(etNrTelefon.getText().toString().length()<10 || etNrTelefon.getText().toString().length()>10){
+            etNrTelefon.setError("Numărul de telefon introdus nu este valid!");
+        }else if(etCazuriRezolvate.getText().toString().isEmpty()){
+            etCazuriRezolvate.setError("Nu ai introdus numărul cazurilor rezolvate!");
+        }else if(etCazuriPierdute.getText().toString().isEmpty()){
+            etCazuriPierdute.setError("Nu ai introdus numărul cazurilor pierdute!");
+        }else if(etSpecializare.getText().toString().isEmpty()){
+            etSpecializare.setError("Nu ai introdus specializarea!");
+        }else if(etSpecializarePrecizare.getText().toString().isEmpty()){
+            etSpecializarePrecizare.setError("Nu ai introdus precizarea specializării!");
+        }else if(etOras.getText().toString().isEmpty()){
+            etOras.setError("Nu ai introduss orașul!");
+        }else if(etStrada.getText().toString().isEmpty()){
+            etStrada.setError("Nu ai introdus strada!");
+        }else if(etNr.getText().toString().isEmpty()){
+            etNr.setError("Nu ai introdus numărul!");
+        }
+        return validare;
     }
 }

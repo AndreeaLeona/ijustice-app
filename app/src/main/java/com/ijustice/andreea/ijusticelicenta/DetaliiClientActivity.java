@@ -140,4 +140,5 @@ public class DetaliiClientActivity extends AppCompatActivity {
 
     }
 
+
 }

@@ -75,19 +75,48 @@ public class EditareCazActivity extends AppCompatActivity {
             btnAlveaza.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Caz c = new Caz(etObiect.getText().toString(), Integer.parseInt(etNumar.getText().toString()),etNume.getText().toString(),
-                            etData.getText().toString(), etDescriere.getText().toString(),cheie);
-                    Map caz = new HashMap<>();
-                    caz.put("obiect",c.getObiect());
-                    caz.put("numar",c.getNrOrdine());
-                    caz.put("numeSolicitant",c.getNumeSolicitant());
-                    caz.put("data",c.getData());
-                    caz.put("descriere",c.getDescriere());
-                    databaseReference.updateChildren(caz);
-                    Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
-                            Toast.LENGTH_SHORT).show();
+                    if (validare()) {
+                        Caz c = new Caz(etObiect.getText().toString(), Integer.parseInt(etNumar.getText().toString()), etNume.getText().toString(),
+                                etData.getText().toString(), etDescriere.getText().toString(), cheie);
+                        Map caz = new HashMap<>();
+                        caz.put("obiect", c.getObiect());
+                        caz.put("numar", c.getNrOrdine());
+                        caz.put("numeSolicitant", c.getNumeSolicitant());
+                        caz.put("data", c.getData());
+                        caz.put("descriere", c.getDescriere());
+                        databaseReference.updateChildren(caz);
+                        Toast.makeText(getApplicationContext(), "Modificarile au fost realizate cu succes",
+                                Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
+            }
         }
+
+    public boolean validare() {
+        boolean validare = true;
+        if (etObiect.getText().toString().isEmpty()) {
+            etObiect.setError("Nu ai introdus obiectul cazului!");
+            validare = false;
+        } else if (etObiect.getText().toString().length() < 5) {
+            etObiect.setError("Obiectul cazului trebuie să fie format din minim 5 caractere!");
+            validare = false;
+        } else if (etNumar.getText().toString().isEmpty()) {
+            etNumar.setError("Nu ai introdus numărul de ordine pe care îl aloci cazului!!");
+            validare = false;
+        } else if (etNume.getText().toString().isEmpty()) {
+            etNume.setError("Nu ai introdus numele solicitantului/clientului!");
+            validare = false;
+        } else if (etNume.getText().toString().length() < 2) {
+            etNume.setError("Numele solicitantului/clientului trebuie să fie format din minim 2 caractere!");
+            validare = false;
+        } else if (etData.getText().toString().isEmpty()) {
+            etData.setError("Nu ai selectat data, selectează o dată pentru a putea continua!");
+            validare = false;
+        } else if (etDescriere.getText().toString().isEmpty()) {
+            etDescriere.setError("Nu ai introdus descrierrea cazului!");
+            validare = false;
+        }
+        return validare;
     }
-}
+    }

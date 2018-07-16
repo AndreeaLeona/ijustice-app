@@ -61,7 +61,7 @@ public class GenerareAvocatiActivity extends AppCompatActivity {
                            String precizareSpecializare=ds.child("specializarePrecizare").getValue(String.class);
 
 
-                        UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializareAvocat,precizareSpecializare);
+                        UserAvocat avocat=new UserAvocat(nume,prenume,email,nrTel,cazuriRezolvate,cazuriPierdute,oras,strada,nr,specializareAvocat,precizareSpecializare,Key);
                             if(avocat.getSpecializare().equals(specializare)) {
                                 listaAvocati.add(avocat);
                             }

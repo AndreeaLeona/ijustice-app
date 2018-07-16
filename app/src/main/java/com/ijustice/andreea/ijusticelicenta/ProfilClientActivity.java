@@ -47,11 +47,10 @@ public class ProfilClientActivity extends AppCompatActivity {
                 final String email = dataSnapshot.child(userId).child("email").getValue(String.class);
                 final String nrTelefon = dataSnapshot.child(userId).child("telefon").getValue(String.class);
 
-                UserClient userClient=new UserClient(nume,adresa,nrTelefon,email);
-                tvNume.setText(userClient.getNume().toString());
-                tvAdresa.setText(userClient.getAdresa().toString());
-                tvEmail.setText(userClient.getEmail().toString());
-                tvTelefon.setText(userClient.getNumarTelefon().toString());
+                tvNume.setText(nume);
+                tvAdresa.setText(adresa);
+                tvEmail.setText(email);
+                tvTelefon.setText(nrTelefon);
                 btnEditeaza.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

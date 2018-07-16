@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.ijustice.andreea.ijusticelicenta.models.AdapterSolicitari;
 import com.ijustice.andreea.ijusticelicenta.models.Caz;
 import com.ijustice.andreea.ijusticelicenta.models.CazuriAdapter;
+import com.ijustice.andreea.ijusticelicenta.models.Client;
 import com.ijustice.andreea.ijusticelicenta.models.UserClient;
 
 import java.util.ArrayList;
@@ -61,8 +62,8 @@ public class SolicitariFragment extends Fragment {
         auth=FirebaseAuth.getInstance();
         FirebaseUser user=auth.getCurrentUser();
         userId=user.getUid();
-        reference=database.getReference("solicitari").child(userId);
         listaSolicitariClienti=new ArrayList<UserClient>();
+        reference=database.getReference("solicitari").child(userId);
         reference2=database.getReference("users_clienti");
         tvMesaj=v.findViewById(R.id.tv_mesaj_solicitari);
 
@@ -79,19 +80,18 @@ public class SolicitariFragment extends Fragment {
              @Override
              public void onDataChange(DataSnapshot dataSnapshot) {
                  for(DataSnapshot ds :dataSnapshot.getChildren()){
-                     String cheie= ds.getKey();
+                    final String cheie= ds.getKey();
                      reference2.child(cheie).addValueEventListener(new ValueEventListener() {
                          @Override
                          public void onDataChange(DataSnapshot dataSnapshot) {
-                             listaSolicitariClienti.clear();
-                             lvSolicitari.setAdapter(null);
-                                final String nume=dataSnapshot.child("nume").getValue(String.class);
-                                final String adresa=dataSnapshot.child("adresa").getValue(String.class);
-                                final String telefon=dataSnapshot.child("telefon").getValue(String.class);
+                            // listaSolicitariClienti.clear();
+                            // lvSolicitari.setAdapter(null);
+                                 final String nume=dataSnapshot.child("nume").getValue(String.class);
+                                 final String adresa=dataSnapshot.child("adresa").getValue(String.class);
+                                 final String telefon=dataSnapshot.child("telefon").getValue(String.class);
                                  final String email=dataSnapshot.child("email").getValue(String.class);
 
-
-                                 UserClient client=new UserClient(nume,adresa,telefon,email);
+                                 UserClient client=new UserClient(nume,adresa,telefon,email,cheie);
                                  listaSolicitariClienti.add(client);
 
                              if(listaSolicitariClienti.size()!=0 && getActivity()!=null){
@@ -101,16 +101,19 @@ public class SolicitariFragment extends Fragment {
                                  tvMesaj.setText("");
 
                              }else {
-                                 tvMesaj.setText("Nu ai adaugat niciun caz!");
+                                 tvMesaj.setText("Nu ai primit nicio solicitare de colaborare!");
                              }
                              lvSolicitari.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                  @Override
                                  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                     UserClient client=adapter.getItem(position);
+
                                      Intent intent=new Intent(getActivity(),VizualizareSolicitareClientActivity.class);
-                                     intent.putExtra("Nume",nume);
-                                     intent.putExtra("Adresa",adresa);
-                                     intent.putExtra("Telefon",telefon);
-                                     intent.putExtra("Email",email);
+                                     intent.putExtra("Cheie",client.getCheie());
+                                     intent.putExtra("Nume",client.getNume());
+                                     intent.putExtra("Adresa",client.getAdresa());
+                                     intent.putExtra("Telefon",client.getNumarTelefon());
+                                     intent.putExtra("Email",client.getEmail());
                                      startActivity(intent);
                                  }
                              });
