@@ -3,11 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/gray"
     android:layout_height="match_parent"
-    tools:context=".DespreFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".DespreAplicatieActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +12,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="30dp"
-        android:text="@string/aplicatia_face_posibil_ca_informatiile_despre_serviciile_tale_sa_ajunga_la_potentialii_clienti_de_asemenea_poti_gestiona_cu_ajutorul_aplicatiei_datele_despre_clientii_cu_care_comunici_notite_care_te_ajuta_in_activitatile_de_zi_cu_zi"
+        android:text="Aplicația îți oferă posibilitatea de a te informa în legătură cu diverse situații sau probleme a căror rezolavare implică aplicarea normelor juridice. Poți selecta o situație, iar pentru aceasta vei găsi specialiști cărora le poți trimite solicitări de colaborare, iar ulterior sa le comunici problema cu care te confrunți. "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="16dp"
@@ -29,13 +26,13 @@
         android:textColor="#000000"
         android:textStyle="italic|bold"
         android:paddingLeft="20dp"
-        android:layout_toRightOf="@id/imageView5"
+        android:layout_toRightOf="@id/imageView_despre_aplicatie"
         android:textSize="18dp"
         android:layout_marginBottom="76dp"
         android:text="Date de contact: nica.leona97@gmail.com" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView_despre_aplicatie"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"

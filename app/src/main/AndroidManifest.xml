@@ -44,7 +44,9 @@
         <activity android:name=".EditareProfilActivity" />
         <activity android:name=".VizualizareAvocatActivity" />
         <activity android:name=".VizualizareSolicitareClientActivity" />
-        <activity android:name=".ChatClientActivity"></activity>
+        <activity android:name=".ChatClientActivity" />
+        <activity android:name=".DespreAplicatieActivity" />
+        <activity android:name=".DetaliiNotitaActivity"></activity>
     </application>
 
 </manifest>

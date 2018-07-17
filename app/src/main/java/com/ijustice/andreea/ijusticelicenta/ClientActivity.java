@@ -128,9 +128,9 @@ public class ClientActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),LogInActivity.class));
         }else if(id==R.id.meniu_despre_tine){
             startActivity(new Intent(getApplicationContext(),ProfilClientActivity.class));
-        }else if(id==R.id.meniu_chat){
-            startActivity(new Intent(getApplicationContext(),ListaEmailuriAvocatiActivity.class));
 
+        }else if(id==R.id.meniu_despre) {
+            startActivity(new Intent(getApplicationContext(), DespreAplicatieActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

@@ -31,14 +31,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/tv_obiect_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/tv_obiect_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Obiect: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -54,14 +54,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/tv_numar_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/tv_numar_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Număr de ordine: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -77,14 +77,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/tv_nume_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/tv_nume_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Nume solicitant/client: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -100,14 +100,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/tv_data_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/tv_data_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Data: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -122,14 +122,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/tv_descriere_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/tv_descriere_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Descriere: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>

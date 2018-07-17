@@ -62,11 +62,15 @@ public class ConversatiiFragment extends Fragment {
         databaseReference.child("colaboratori").child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                lista.clear();
+                lvConversatii.setAdapter(null);
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
                     cheie=ds.getKey();
                     databaseReference.child("users_clienti").child(cheie).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            lista.clear();
+                            lvConversatii.setAdapter(null);
                                 final String cheieClient=dataSnapshot.getKey();
                                 String nume=dataSnapshot.child("nume").getValue(String.class);
                                 String adresa=dataSnapshot.child("adresa").getValue(String.class);

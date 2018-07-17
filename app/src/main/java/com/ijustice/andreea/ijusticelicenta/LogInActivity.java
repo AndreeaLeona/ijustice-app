@@ -49,7 +49,7 @@ public class LogInActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),SignUpClientActivity.class);
+                Intent intent=new Intent(LogInActivity.this,SignUpClientActivity.class);
                 startActivity(intent);
             }
         });
@@ -81,13 +81,13 @@ public class LogInActivity extends AppCompatActivity {
         }
         progressDialog.setMessage(getString(R.string.progrss_dialog_text));
         progressDialog.show();
-        auth.signInWithEmailAndPassword(email,parola).addOnCompleteListener((Activity) getApplicationContext(), new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email,parola).addOnCompleteListener(LogInActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
                 if(task.isSuccessful()){
                     finish();
-                    Intent intent=new Intent(getApplicationContext(),ClientActivity.class);
+                    Intent intent=new Intent(LogInActivity.this,ClientActivity.class);
                     startActivity(intent);
 
                 }

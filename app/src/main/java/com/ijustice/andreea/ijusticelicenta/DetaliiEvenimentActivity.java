@@ -47,6 +47,7 @@ public class DetaliiEvenimentActivity extends AppCompatActivity {
         btnSalveaza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(validare()){
                 String titlu=etTitlu.getText().toString();
                 String data=etData.getText().toString();
                 String detalii=etDetalii.getText().toString();
@@ -62,12 +63,23 @@ public class DetaliiEvenimentActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Datele tale au fost salvate cu succes!", Toast.LENGTH_SHORT).show();
 
             }
+            }
         });
 
 
-
-
-
-
+    }
+    public boolean validare(){
+        boolean validare=true;
+        if(etTitlu.getText().toString().isEmpty()){
+            etTitlu.setError("Nu ai introdus titlul notiței");
+            validare=false;
+        }else if(etData.getText().toString().isEmpty()){
+            etData.setError("Nu ai selectat data pentru care vrei să adaugi această notiță");
+            validare=false;
+        }else if(etDetalii.getText().toString().isEmpty()){
+            etDetalii.setError("Nu ai introdus detaliile ce definesc notița");
+            validare=false;
+        }
+        return  validare;
     }
 }

@@ -32,14 +32,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_nume_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_nume_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Nume: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -56,14 +56,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_prenume_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_prenume_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Prenume: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
 
@@ -81,14 +81,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_adresa_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_adresa_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Adresă: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -105,14 +105,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_oras_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_oras_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Oraș: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -129,14 +129,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_telefon_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_telefon_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Număr de telefon: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -154,14 +154,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_email_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_email_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Adresă de email: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -178,14 +178,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@id/vizualizeaza_client_et_precizari_hint"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/vizualizeaza_client_et_precizari_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="Precizări: "
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
 

@@ -96,6 +96,7 @@ public class VizualizareSolicitareClientActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),
                                 "Ai anulat solicitarea, iar potențialul client a fost șters din lista ta de conversașii",
                                 Toast.LENGTH_SHORT).show();
+
                     }
                 });
             }
@@ -121,6 +122,7 @@ public class VizualizareSolicitareClientActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         btnAccepta.setEnabled(true);
                                         btnAccepta.setText("Anulează");
+
 
                                     }
                                 });

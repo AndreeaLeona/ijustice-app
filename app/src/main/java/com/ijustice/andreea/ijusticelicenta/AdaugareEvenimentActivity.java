@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -83,7 +84,7 @@ public class AdaugareEvenimentActivity extends AppCompatActivity {
                 tvMesaj.setText("");
 
             }else {
-                    tvMesaj.setText("Nu exista notite adaugate pentru aceasta data!");
+                    tvMesaj.setText("Nu există notite adăugate pentru această dată!");
                 }
 
 
@@ -102,6 +103,19 @@ public class AdaugareEvenimentActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                NotaAvocat notita=lista.get(position);
+                Intent intent=new Intent(AdaugareEvenimentActivity.this,DetaliiNotitaActivity.class);
+                intent.putExtra("titlu",notita.getTitlu());
+                intent.putExtra("data",notita.getData());
+                intent.putExtra("detalii",notita.getDetalii());
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 }

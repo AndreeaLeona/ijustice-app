@@ -53,7 +53,7 @@ public class ListaEmailuriAvocatiActivity extends AppCompatActivity {
                     databaseReference.child("users").child(cheie).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            final String cheieClient=dataSnapshot.getKey();
+                            final String cheieAvocat=dataSnapshot.getKey();
                             String nume=dataSnapshot.child("nume").getValue(String.class);
                             String prenume=dataSnapshot.child("prenume").getValue(String.class);
                             String telefon=dataSnapshot.child("numarTelefon").getValue(String.class);
@@ -67,7 +67,7 @@ public class ListaEmailuriAvocatiActivity extends AppCompatActivity {
                             int nr=dataSnapshot.child("nr").getValue(int.class);
                             UserAvocat avocat=new UserAvocat(nume,prenume,email,telefon,cazuriRezolvate,cazuriPierdute,
                                     oras,strada,nr,
-                                    specializare,speializarePrecizared,cheie);
+                                    specializare,speializarePrecizared,cheieAvocat);
 
 
                             lista.add(avocat);
